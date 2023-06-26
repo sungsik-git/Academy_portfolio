@@ -13,6 +13,8 @@
 #issuanceContainer{
  	width: 100%;
  	margin-bottom: 50px;
+    position: relative;
+    left: -9%;
 }
 #issuanceContainer p{
 	font-size: 26px;
@@ -34,6 +36,7 @@
 	border-bottom: 1px solid #B6B5B7;
 	padding: 5px;
 	font-size: 17px;
+	font-weight: 300;
 }
 #listDeleteBtn {
 	position: relative;
@@ -44,6 +47,7 @@
 	right: 60px; /* 수정된 부분 */
 	border-radius: 4px;
 	margin: 10px auto;
+	font-weight: 400;
 }
 </style>
 </head>
@@ -87,7 +91,7 @@
 			</tr>
 			</c:forEach>
 		</table>
-		<input type="button" value="발급삭제" id="listDeleteBtn">
+		<input type="button" value="발급취소" id="listDeleteBtn">
 	</div>
 	<script type="text/javascript">
 	$("#listDeleteBtn").click(function() {

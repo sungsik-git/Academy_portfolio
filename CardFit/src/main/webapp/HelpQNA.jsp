@@ -14,6 +14,8 @@
 #QNAContainer {
 	width: 100%;
 	padding-bottom: 50px;
+		position: relative;
+    left: -9%;
 }
 
 #QNAContainer p {

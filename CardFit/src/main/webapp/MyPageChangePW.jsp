@@ -13,6 +13,8 @@
 	#changePWContainer {
 	width: 80%;
 	margin: 0 auto;
+	position: relative;
+    left: -9%;
 }
 #changePWContainer p{
 	font-size:26px;

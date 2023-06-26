@@ -14,6 +14,8 @@
 #directContainer {
 	width: 80%;
 	margin: 0 auto;
+		position: relative;
+    left: -9%;
 }
 
 #directContainer p {

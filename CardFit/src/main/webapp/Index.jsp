@@ -21,7 +21,6 @@
 <style type="text/css">
 @charset "UTF-8";
 
-
 @font-face {
 	font-family: 'Pretendard';
 	src: url('webapp/font/Pretendard-Bold.ttf') format('truetype');
@@ -31,43 +30,37 @@
 @font-face {
 	font-family: 'Pretendard';
 	src: url('webapp/font/Pretendard-Black.ttf') format('truetype');
-		font-weight: 900;
-	
+	font-weight: 900;
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	src: url('webapp/font/Pretendard-ExtraBold.ttf') format('truetype');
-		font-weight: 800;
-	
+	font-weight: 800;
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	src: url('webapp/font/Pretendard-ExtraLight.ttf') format('truetype');
-		font-weight: 200;
-	
+	font-weight: 200;
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	src: url('webapp/font/Pretendard-Light.ttf') format('truetype');
-		font-weight: 300;
-	
+	font-weight: 300;
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	src: url('webapp/font/Pretendard-Medium.ttf') format('truetype');
-		font-weight: 500;
-	
+	font-weight: 500;
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	src: url('webapp/font/Pretendard-Regular.ttf') format('truetype');
 	font-weight: 400;
-	
 }
 
 @font-face {
@@ -84,16 +77,19 @@
 
 * {
 	font-family: Pretendard;
-	font-weight:700;
+	font-weight: 700;
 	padding: 0;
 	margin: 0;
 }
+
 body {
 	width: 1920px;
+	overflow: scroll;
+	overflow-x: hidden;
 }
 /* 아래의 모든 코드는 영역::코드로 사용 */
 body::-webkit-scrollbar {
-	display: none;
+	width: 15px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -119,7 +115,7 @@ body::-webkit-scrollbar-track {
 	display: none;
 }
 
-.bannerContents > img {
+.bannerContents>img {
 	position: relative;
 	width: 1920px;
 	height: 650px;
@@ -144,9 +140,16 @@ body::-webkit-scrollbar-track {
 	font-size: 52px;
 }
 
+#bannerComent1 p:nth-child(4), #bannerComent1 p:nth-child(5) {
+	font-weight: 300;
+}
+
 #bannerComent2 {
 	color: white;
-	line-height: 50px;
+	line-height: 60px;
+	position: absolute;
+	left: 280px;
+	top: 228px;
 }
 
 #bannerComent2 p:nth-child(1), #bannerComent2 p:nth-child(2) {
@@ -164,6 +167,8 @@ body::-webkit-scrollbar-track {
 	font-size: 22px;
 	box-shadow: 0px 4px 5px rgb(0, 0, 0, 0.2);
 	border-radius: 4px;
+	margin-top: 45px;
+	font-weight: 600;
 }
 
 #goSearchMyCard:hover {
@@ -172,7 +177,6 @@ body::-webkit-scrollbar-track {
 }
 
 /* about section start */
-
 #aboutContainer {
 	position: relative;
 	width: 1920px;
@@ -180,12 +184,13 @@ body::-webkit-scrollbar-track {
 	margin: 0 auto;
 }
 
-#aboutContainer > p {
+#aboutContainer>p {
 	position: relative;
 	text-align: center;
 	font-size: 30px;
 	margin: 20px;
 	font-weight: 400;
+	margin-top: 80px;
 }
 
 #aboutContents {
@@ -227,14 +232,13 @@ body::-webkit-scrollbar-track {
 	left: 182px;
 }
 
-
-/* adventage Section Start */ 
+/* adventage Section Start */
 #adventageContainer {
 	position: relative;
 	width: 1920px;
 	height: auto;
 	text-align: center;
-	top:150px;
+	top: 150px;
 }
 
 .adventage {
@@ -252,8 +256,8 @@ body::-webkit-scrollbar-track {
 	margin-bottom: 20px;
 }
 
-#adventage3{
-	top:50px;
+#adventage3 {
+	top: 50px;
 }
 
 /* 카드추천 영역*/
@@ -267,16 +271,18 @@ body::-webkit-scrollbar-track {
 	padding: 18px;
 }
 
-#introduceBox {
+.introduceBox {
 	display: block;
 	position: relative;
-	width: 50%;
+	width: 80%;
 	margin: 0 auto;
 	padding: 12px;
+	text-align: center;
+	margin-top: 40px;
 }
 
 .introduceBox>p {
-	font-size: 30px;
+	font-size: 28px;
 }
 
 #cardMessageBox {
@@ -291,30 +297,35 @@ body::-webkit-scrollbar-track {
 	border: #F8F8F8;
 	border-radius: 8px;
 }
-#cardMessageBox img{
+
+#cardMessageBox img {
 	position: relative;
-	width: 20%;
+	width: 60px;
+	height: 60px;
 	float: left;
-	margin: 5px;
-}
-#cardMessageBox p{
-	position:relative;
-	width: 60%;
-	float: right;
-	top: 40px;
-	font-size: 18px;
-	font-weight: 500;
+	margin: 5px auto;
+	left: 50px;
 }
 
-#cardMessageBox p:last-child{
+#cardMessageBox p {
+	position: relative;
+	width: 60%;
+	float: right;
+	font-size: 18px;
+	font-weight: 500;
+	left: -30px;
+}
+
+#cardMessageBox p:last-child {
 	font-weight: 400;
 	font-size: 14px;
 }
 
-#messageBtn{
+#messageBtn {
 	width: 100%;
 }
-#messageBtn input[type=button]{
+
+#messageBtn input[type=button] {
 	position: relative;
 	width: 80%;
 	border: none;
@@ -326,8 +337,6 @@ body::-webkit-scrollbar-track {
 	left: 10%;
 }
 
-
-
 /* 랭킹 영역*/
 #cardRankingContainer {
 	position: relative;
@@ -338,43 +347,83 @@ body::-webkit-scrollbar-track {
 
 #rankingTitleBox {
 	position: relative;
-	width: 30%;
+	width: 20%;
+	height: 10%;
 	margin: 0 auto;
 	text-align: center;
-	top: 3vh;
-	padding-bottom: 50px;
+	float: left;
+	left: 15%
 }
-#rankingTitleBox p{
+
+#rankingTitleBox p {
 	margin: 0;
 }
-#tabBtnContainer{
-	width: 80%;
+
+#tabBtnContainer {
+	width: 50%;
+	height: 10%;
 	margin: 0 auto;
 	text-align: center;
-	margin-top: 50px;
+	margin-left: 550px;
 }
 
-#tabBtnContainer input[type="button"]{
-	width: 20%;
-	border:none;
-	background-color: #F4F4F4;
-	padding: 8px 12px;
-	font-family: 24px;
+#tabBtnContainer input[type="radio"] {
+	display: none;
 }
 
-#changAjaxContainer{
-	width: 80%;
-	height: auto;
+#tabBtnContainer label {
+	width: 150px;
+	height: 90px;
+	border: none;
+	font-size: 24px;
+	background: none;
+	line-height: 70px;
+	cursor: pointer;
+}
+
+#changAjaxContainer {
+	width: 100%;
+	height: 800px;
 	margin: 0 auto;
-	overflow: hidden;
 	text-align: center;
+	overflow: scroll;
+	overflow-x: hidden;
 }
+
 footer {
 	position: relative;
 	width: 1920px;
-	height: 100px;
-	bottom: 0;
+	height: 150px;
 	text-align: center;
+	background-color: #49484B;
+	color: white;
+}
+
+footer a {
+	position: relative;
+	top:10px;
+	text-decoration: none;
+	color: black;
+	padding: 12px 28px;
+	font-size: 14px;
+	background-color: white;
+	border-radius: 4px;
+}
+
+footer p{
+	font-size: 16px;
+}
+
+footer #leftContainer {
+	width: 40%;
+	float: left;
+	margin-top: 30px;
+}
+
+footer #rightContainer {
+	width: 60%;
+	float: right;
+	margin-top: 70px;
 }
 
 /* 타이핑 효과 */
@@ -393,14 +442,30 @@ div.typing-txt {
 	padding: 20px;
 }
 
-@keyframes cursor { 0% {
+@
+keyframes cursor { 0% {
 	border-right: 1px solid #fff
 }
-
-50%{border-right:1px solid #000}
-100%{border-right:1px solid #fff}
-
-
+50
+%
+{
+border-right
+:
+1px
+ 
+solid
+ 
+#000
+}
+100
+%
+{
+border-right
+:
+1px
+solid
+#fff
+}
 </style>
 </head>
 <body>
@@ -470,8 +535,9 @@ div.typing-txt {
 
 	<div id="searchMyCardContainer">
 		<div class="introduceBox">
-			<div>
+			<div id="typingContainer">
 				<div class="typing-txt">안녕하세요? 나를 위한 맞춤형 자산 사용 설계 서비스 카드핏 입니다.</div>
+				<div class="typing-txt"><br></div>
 				<div class="typing-txt">당신에게 맞춤형 카드를 추천해드리기위해 당신에 대해 알고 싶어요!</div>
 				<div class="typing-txt">당신에게 가상의 상황을 드릴게요 :)</div> 
 			</div>
@@ -491,20 +557,30 @@ div.typing-txt {
 	<div id="cardRankingContainer">
 		<div id="rankingTitleBox">
 			<h1>카드랭킹</h1>
-			<p>신용카드 실시간 인기순위</p>
+			<p>카드 실시간 인기순위</p>
 		</div>
 		<div id="tabBtnContainer">
-			<input type="button" value="통합" id="totalRanking">
-			<input type="button" value="카드사별" id="companyRanking">
-			<input type="button" value="혜택별" id="rewordRanking">
-			<input type="button" value="실적/회비별" id="feeRanking">
+			<input type="radio" id="totalRanking" checked="checked">
+			<label for="totalRanking">통합</label>
+			<input type="radio" id="companyRanking">
+			<label for="companyRanking">카드사별</label>
+			<input type="radio" id="rewordRanking">
+			<label for="rewordRanking">혜택별</label>
+			<input type="radio" id="feeRanking">
+			<label for="feeRanking">실적/회비별</label>
 		</div>
 		<div id="changAjaxContainer">
 			
 		</div>
 	</div>
 	<footer>
-		<a href="ManagerLogin.do">상담원/관리자 전용</a>
+		<div id="leftContainer">
+			<p>상담사 고객님의 로그인은 아래 버튼을 클릭하세요</p>
+			<a href="ManagerLogin.do">상담원/관리자 전용</a>
+		</div>
+		<div id="rightContainer">
+			<p>서울 강남구 강남대로78길 8 한국빌딩 4F, 8F &nbsp&nbsp&nbsp 제작자 : 김성식 &nbsp&nbsp&nbsp 문의 : kss950708@naver.com </p>
+		</div>
 	</footer>
 
 	<script type="text/javascript" src="./js/jquery.js"></script>
@@ -677,7 +753,7 @@ div.typing-txt {
 			  });
 		 
 		 
-		   $(document).ready(function() {
+ 		   $(document).ready(function() {
 		     var url = "TotalRanking.do";
 		     
 		     $.ajax({
@@ -691,7 +767,8 @@ div.typing-txt {
 		       }
 		     });
 		   });
-
+ 
+		   
 	</script>
 </body>
 </html>

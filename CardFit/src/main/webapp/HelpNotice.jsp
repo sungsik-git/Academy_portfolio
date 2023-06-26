@@ -12,6 +12,8 @@
 #allContainer{
  	width: 100%;
  	padding-bottom: 50px;
+ 		position: relative;
+    left: -9%;
 }
 #allContainer p{
 	font-size: 26px;

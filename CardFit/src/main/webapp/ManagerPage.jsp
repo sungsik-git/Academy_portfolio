@@ -82,7 +82,7 @@ nav>ul>li {
 }
 
 .tab_item {
-	width: calc(100%/ 10);
+	width: calc(100%/ 6);
 	height: 50px;
 	border-bottom: 3px solid #333333;
 	background-color: #f8f8f8;
@@ -157,12 +157,8 @@ input[type="submit"] {
 			<div id="userTab" class="tab_item">고객관리</div>
 			<div id="companyTab" class="tab_item">카드사/상담사관리</div>
 			<div id="issuanceTab" class="tab_item">발급관리</div>
-			<div id="bannerTab" class="tab_item">배너관리</div>
 			<div id="noticeTab" class="tab_item">공지사항관리</div>
 			<div id="questionTab" class="tab_item">문의관리</div>
-			<div id="boardTab" class="tab_item">게시판관리</div>
-			<div id="testTab" class="tab_item">테스트관리</div>
-			<div id="statsTab" class="tab_item">통계보기</div>
 		</div>
 	<script type="text/javascript" src="./js/jquery.js"></script>
 	<script type="text/javascript">
@@ -187,11 +183,6 @@ input[type="submit"] {
 	    });
 	});
 	$(function() {
-	    $('#bannerTab').on('click', function() {
-	        window.location.href = "BannerTab.do";
-	    });
-	});
-	$(function() {
 	    $('#noticeTab').on('click', function() {
 	        window.location.href = "NoticeTab.do";
 	    });
@@ -201,22 +192,6 @@ input[type="submit"] {
 	        window.location.href = "QuestionTab.do";
 	    });
 	});
-	$(function() {
-	    $('#boardTab').on('click', function() {
-	        window.location.href = "BoardTab.do";
-	    });
-	});
-	$(function() {
-	    $('#testTab').on('click', function() {
-	        window.location.href = "TestTab.do";
-	    });
-	});
-	$(function() {
-	    $('#statsTab').on('click', function() {
-	        window.location.href = "StatsTab.do";
-	    });
-	});
-	
 	</script>
 </body>
 </html>

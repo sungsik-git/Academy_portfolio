@@ -28,14 +28,14 @@ section {
 	float: right;
 }
 .issuingContainer{
-	position:relative;
-	width:1240px;
-	height:204px;
-	border: 2px #DADADB solid;
-	background-color: white; 
-	margin: 0 auto;
-	box-shadow: 0px 5px 1px #DADADB;
-	left: -60px;
+	position: relative;
+    width: 1170px;
+    height: 204px;
+    border: 2px #DADADB solid;
+    background-color: white;
+    margin: 0 auto;
+    box-shadow: 0px 5px 1px #DADADB;
+    left: -100px;
 }
 .issuingContainer p{
 	position:relative;
@@ -56,8 +56,8 @@ section {
 }
 #issuingCardImg{
 	position: relative;
-	width: 170px;
-	height: 150px;
+	max-width: 170px;
+	max-height: 150px;
 	float: left;
 	margin-left: 350px;
 }

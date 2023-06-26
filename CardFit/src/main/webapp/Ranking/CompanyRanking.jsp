@@ -9,52 +9,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <style type="text/css">
-body{
-}
-.container{
-	position: relative;
-	width: 17%;
-	margin-left:20px;
-	float: left;
-}
-.container h2{
-	padding: 4px;
-	margin-top: 4px;
-}
-.rankingElement{
-	width: 100%;
-	height: 120px;
-	background-color: #F4F4F4;
-	margin-bottom: 5px;
-}
-.imgBox{
-	position: relative;
-	width: 50%;
-	float: left;
-  	display: flex; /* Flexbox 사용 */
-	align-items: center; /* 수직 정렬 */
-	justify-content: center; /* 수평 정렬 */
-}
-.imgBox img{
-	position: relative;
-	max-width:150px;
-	max-height: 120px;
-	margin: auto;
-}
-.contentsBox{
-	position: relative;
-	width: 50%;
-	float: right;
-}
-.contentsBox p{
-	margin: 0;
+body {
+  width: 1920px;
 }
 
+#totalContainer {
+  width: 100%;
+  text-align: center;
+}
 
-#loadMoreBtn{
-	width:60%;
-	margin: 0 auto;
-	
+.container {
+  position: relative;
+  width: 18%;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.container h2 {
+  padding: 8px;
+  margin-top: 4px;
+  font-size: 24px;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-position: under;
+}
+
+.rankingElement {
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  margin-bottom: 5px;
+  box-shadow: 0px 4px 5px rgb(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: flex; /* Flexbox 사용 */
+  align-items: center; /* 수직 정렬 */
+}
+
+.imgBox {
+  position: relative;
+  width: 50%;
+  display: flex; /* Flexbox 사용 */
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
+}
+
+.imgBox img {
+  position: relative;
+  max-width: 140px;
+  max-height: 110px;
+  margin: auto;
+}
+
+.contentsBox {
+  position: relative;
+  width: 50%;
+}
+
+.contentsBox p {
+  margin: 0;
+  font-size: 12px;
+}
+
+#loadMoreBtn {
+  width: 60%;
+  margin: 0 auto;
 }
 </style>
 </head>

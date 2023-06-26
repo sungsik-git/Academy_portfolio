@@ -15,7 +15,8 @@
 	width: 80%;
 	margin: 0 auto;
 		padding-bottom: 50px;
-	
+	position: relative;
+    left: -9%;
 }
 
 #deleteInfoContainer > p:first-child {

@@ -13,6 +13,8 @@
 #memberModifyContainer {
 	width: 80%;
 	margin: 0 auto;
+	position: relative;
+    left: -9%;
 }
 #memberModifyContainer p{
 	font-size:26px;
@@ -77,9 +79,9 @@ input[type=submit]{
 					<th>주민등록번호</th>
 					<c:set var="regNum" value="${dto.regNum }" />
 					<td><input type="text" name="regNumF" id="regNumF"
-						 value="${fn:substring(regNum,0,6) }" style="width:48%">
+						 value="${fn:substring(regNum,0,6) }" style="width:46.5%">
 						- <input type="password" name="regNumB" id="regNumB"
-						 value="${fn:substring(regNum,6,13) }" style="width:48%"></td>
+						 value="${fn:substring(regNum,6,13) }" style="width:46.5%"></td>
 
 				</tr>
 				<tr>

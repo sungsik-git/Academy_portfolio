@@ -24,14 +24,18 @@ public class CounsellerLoginOKCommand implements Command{
 		
 		CounsellerInfoDTO dto = dao.getCounsellerInfo(id);
 		int result = dao.login(id, pw);
+        System.out.println("command : " + dto.getCompany());
+
 		
 		if (dto.getDivision() != null && (dto.getDivision().equals(divisionCheck) || dto.getDivision().equals("s"))) {
 		    if (result == 0) {
 		        session.setAttribute("id", id);
 		        session.setAttribute("pw", pw);
 		        session.setAttribute("counsellerName", dto.getName());
-		        session.setAttribute("company", dto.getCompany());
 		        session.setAttribute("division", dto.getDivision());
+		        if(dto.getCompany()!=null) {
+		        	session.setAttribute("company", dto.getCompany());
+		        }
 		    } else {
 		        response.sendRedirect("Authority.jsp");
 		    }

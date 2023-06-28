@@ -9,7 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>상담사 페이지</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <style type="text/css">
 #issuancingContainer {
 	position: relative;
@@ -18,7 +19,7 @@
 	margin: 0 auto;
 	float: right;
 	overflow: auto;
-	height: 633px;
+	height: 783px;
 	text-align: center;
 }
 
@@ -30,24 +31,63 @@
 	height: 180px;
 }
 
-#leftBox {
-	width: 30%;
-	float: left;
-}
 
 #rightBox {
 	width: 70%;
 	float: right;
 	text-align: left;
 }
+#leftBox {
+  width: 30%;
+  height: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #leftBox img {
-	width: 80%;
-	margin: auto;
+  max-width: 150px;
+  max-height: 180px;
+  margin: auto;
 }
 
 #rightBox p {
 	padding: 2px;
+}
+.clearBtn{
+	position: relative;
+	width: 20%;
+	height: 30px;
+	background: none;
+	display: inline-block;
+	color: #0042ec;
+	border-radius: 4px;
+	font-size: 16px;
+	border: 2px solid #0042ec;
+}
+
+#colorTable{
+	position: relative;	
+	width: 50%;
+	margin: 0 auto;
+}
+#colorTable tr th{
+	border: 1px solid black;
+	height: 10px;
+}
+#colorTable tr td{
+	border: 1px solid black;
+	height: 20px;
+}
+#colorTable tr td:nth-child(1) {
+	background-color: #A4A4FB;
+}
+#colorTable tr td:nth-child(2) {
+	background-color: #FFF289;
+}
+#colorTable tr td:nth-child(3) {
+	background-color: #FFC9C9; 
 }
 </style>
 </head>
@@ -58,6 +98,14 @@
 		<h2>현재 발급을 진행중인 카드리스트입니다.</h2>
 		<br>
 		<p>배경색 별로 남은 시간이 구분돼요 !</p>
+		<table id="colorTable">
+			<tr>
+				<th>요청일 전이예요!</th><th>시간에 맞춰서 전화하세요!</th><th>요청일이 지났어요!</th>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td>
+			</tr>
+		</table>
 		<c:forEach items="${list}" var="list">
 			<c:set var="contactableDateS"
 				value="${fn:split(list.contactableDate, '~')[0]}" />
@@ -79,7 +127,7 @@
         <c:when test="${parsedDateS lt now && now lt parsedDateE}">
           #FFF289; 
         </c:when>
-        <c:when test="${parsedDateE gt now}">
+        <c:when test="${now gt parsedDateE}">
           #FFC9C9; 
         </c:when>
       </c:choose>
@@ -105,7 +153,7 @@
 	<script src="../js/jquery.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function() {
-			$('body').on('click', 'input[type="button"]', function(e) {
+			$('.clearBtn').on('click', function(e) {
 				e.preventDefault();
 
 				var cardName = $('input[name="cardName"]').val();

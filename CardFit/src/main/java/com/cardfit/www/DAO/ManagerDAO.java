@@ -1192,7 +1192,7 @@ public class ManagerDAO {
 	/* 카드 종류별 랭킹리스트 */
 	public ArrayList<CardInfoDTO> getCardRankingList(int curPage, String cardDivision){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE cardDivision = ? ORDER BY searchCnt ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE cardDivision = ? ORDER BY searchCnt DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setString(1, cardDivision);
@@ -1217,7 +1217,7 @@ public class ManagerDAO {
 	/* 발급횟수 랭킹리스트 */
 	public ArrayList<CardInfoDTO> getCardissRankingList(int curPage){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " ORDER BY issuanceNum ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " ORDER BY issuanceNum DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setInt(1, curPage * sizeOfRankingList);
@@ -1242,7 +1242,7 @@ public class ManagerDAO {
 	/* 회사별 랭킹리스트 */
 	public ArrayList<CardInfoDTO> getCardCompanyRankingList(int curPage, String company){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE company = ? ORDER BY searchCnt ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE company = ? ORDER BY searchCnt DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setString(1, company);
@@ -1268,7 +1268,7 @@ public class ManagerDAO {
 	/* 혜택별 랭킹리스트 */
 	public ArrayList<CardInfoDTO> getCardRewordRankingList(int curPage, String reword){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE reword LIKE ? ORDER BY searchCnt ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE reword LIKE ? ORDER BY searchCnt DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setString(1, "%" + reword + "%");
@@ -1294,7 +1294,7 @@ public class ManagerDAO {
 	/* 연회비 1원 이상 랭킹리스트 */
 	public ArrayList<CardInfoDTO> getCardFeeRankingList(int curPage, int fee){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE fee >= ? ORDER BY searchCnt ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE fee >= ? ORDER BY searchCnt DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setInt(1, fee);
@@ -1320,7 +1320,7 @@ public class ManagerDAO {
 	/* 연회비 무료 랭킹리스트 overriding */
 	public ArrayList<CardInfoDTO> getCardFeeRankingList(int curPage){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE fee = 0 ORDER BY searchCnt ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE fee = 0 ORDER BY searchCnt DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setInt(1, curPage * sizeOfRankingList);
@@ -1345,7 +1345,7 @@ public class ManagerDAO {
 	/* 실적 1원 이상 랭킹리스트 */
 	public ArrayList<CardInfoDTO> getCardRecordRankingList(int curPage, int record){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE record >= ? ORDER BY searchCnt ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE record >= ? ORDER BY searchCnt DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setInt(1, record);
@@ -1371,7 +1371,7 @@ public class ManagerDAO {
 	/* 연회비 무료 랭킹리스트 overriding */
 	public ArrayList<CardInfoDTO> getCardRecordRankingList(int curPage){
 		ArrayList<CardInfoDTO> list = new ArrayList<>();
-		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE record = 0 ORDER BY searchCnt ASC LIMIT ?,?";
+		final String GET_RANKING_SQL = "SELECT img, name,company,cardDivision FROM " + CARDINFO_TABLE + " WHERE record = 0 ORDER BY searchCnt DESC LIMIT ?,?";
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(GET_RANKING_SQL)){
 				pstmt.setInt(1, curPage * sizeOfRankingList);
@@ -1392,4 +1392,21 @@ public class ManagerDAO {
 		
 		return list;
 	}
+	
+	/* 상담사 회원탈퇴 */
+	public int deleteCounsellerInfo(String id) {
+		final String DELETE_INFO_SQL = "DELETE FROM " + COUNSELLERINFO_TABLE + " WHERE id = ?";
+		int result = 0;
+		
+		try(Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(DELETE_INFO_SQL)){
+			pstmt.setString(1, id);
+			result=pstmt.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+
 }

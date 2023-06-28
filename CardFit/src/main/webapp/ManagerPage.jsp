@@ -9,7 +9,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>관리자 페이지</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
+
 <%--모달 라이브러리 --%>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>

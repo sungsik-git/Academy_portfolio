@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>발급 신청 완료</title>
  <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
  <link href="./element/Default/Default.css" type="text/css"
 	rel="stylesheet">

@@ -7,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>상담사 회원가입</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
+
 <link href="./element/Default/Default.css" type="text/css"
 	rel="stylesheet">
 <style type="text/css">
@@ -104,13 +106,13 @@ input[type=submit] {
 					</select></td>
 				<tr id="email">
 					<th>사내메일 인증</th>
-					<td><input type="email" name="email" style="width: 69%">
+					<td><input type="email" name="email" style="width: 68%">
 						<button class="searchButton" style="width: 29%">사내메일 인증</button>
 						<div id="companyMsg"></div></td>
 				</tr>
 				<tr id="corporate">
 					<th>사업자번호</th>
-					<td><input type="text" name="corporate" style="width: 69%">
+					<td><input type="text" name="corporate" style="width: 68%">
 						<button class="searchButton" style="width: 29%">사업자번호 조회</button>
 						<div id="coperateMsg"></div></td>
 				</tr>

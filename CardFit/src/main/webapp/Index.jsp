@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>카드핏</title>
  <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 
 <!-- <link href="./css/Index.css" rel="stylesheet" type="text/css"> -->
@@ -251,14 +251,12 @@ body::-webkit-scrollbar-track {
 
 .adventage img {
 	position: relative;
-	width: 60%;
+	width: 380px;
+	height: 250px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
 
-#adventage3 {
-	top: 50px;
-}
 
 /* 카드추천 영역*/
 #searchMyCardContainer {
@@ -502,7 +500,7 @@ solid
 				</p>
 			</div>
 			<div id="aboutImg2" class="aboutImgs" style="float: right">
-				<img alt="" src="./source/svg/sample2.svg">
+				<img alt="" src="./source/svg/intro2.svg">
 			</div>
 			<div class="aboutContexts" style="float: left">
 				<p id="aboutContext2">
@@ -515,17 +513,17 @@ solid
 
 		<div id="adventageContainer">
 			<div id="adventage1" class="adventage">
-				<img alt="" src="./source/svg/advetage1.svg">
+				<img alt="" src="./source/svg/adventage1.svg">
 				<p>나에게 필요한 혜택들만 최대한으로</p>
-				<p>최대한 고르고 골라서 최고의 효율을 낼 수 있는 카드를 GET!!</p>
+				<p>고르고 골라서 최고의 효율을 낼 수 있는 카드를 GET!!</p>
 			</div>
 			<div id="adventage2" class="adventage">
-				<img alt="" src="./source/svg/advetage2.svg">
+				<img alt="" src="./source/svg/adventage2.svg">
 				<p>카드가 필요해?</p>
 				<p>카드핏에서 딱 맞춰주는데 아무거나 쓸거야?</p>
 			</div>
 			<div id="adventage3" class="adventage">
-				<img alt="" src="./source/svg/advetage3.svg">
+				<img alt="" src="./source/svg/adventage3.svg">
 				<p>맞춤카드라고 골랐더니 검색결과 이렇게 많아?</p>
 				<p>타이트하게 딱 맞춘 카드들로!</p>
 			</div>
@@ -605,7 +603,7 @@ solid
 
 		if (typingBool == false) {
 		  typingBool = true;
-		  var tyInt = setInterval(typing, 10); // 반복동작, 타이핑 속도제어 
+		  var tyInt = setInterval(typing, 50); // 반복동작, 타이핑 속도제어 
 		}
 
 		function typing() {

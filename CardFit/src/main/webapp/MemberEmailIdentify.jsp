@@ -71,7 +71,8 @@ input[type=checkbox]{
 	margin: 10px 0;
 }
 </style>
-<title>Insert title here</title>
+<title>회원가입</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 </head>
 <body>
 	<c:import url="./element/Header/Header.jsp"/>
@@ -147,20 +148,21 @@ input[type=checkbox]{
                     newForm.append(input1);
                     newForm.append(submitButton);
                     $("#identifyEmailForm").append(newForm);
-                    
-                    $("#emailIdentiBtn").on("click", function(event) {
 
-                    	var userNumber = $('#userNumber').val();
+                    $("#emailIdentiBtn").on("click", function(event) {
+                        event.preventDefault(); // Prevent form submission
+
+                        var userNumber = $('#userNumber').val();
                         $.ajax({
                             url: "checkEmail.do",
                             type: "POST",
                             data: { "userNumber": userNumber },
                             dataType: "text",
                             success: function(result) {
-                                if (result == 0) {
-                                $('#registerEmail').attr("readonly", "readonly").attr("placeholder", "인증완료");
+                                if (result === "0") {
+                                    $("#identifyEmailForm").html("<p>인증완료</p>").css("color","red");
                                 } else {
-                                	$('#emailCheckMsg').html("인증실패");
+                                    $('#emailCheckMsg').html("인증실패");
                                 }
                             },
                         });
@@ -173,6 +175,7 @@ input[type=checkbox]{
                 alert("서버 요청 실패");
             }
         });
+
     });
 });
 </script>

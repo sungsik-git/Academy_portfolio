@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>	
+<title>관리자 페이지</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
+
 <link href="../element/Default/Default.css" type="text/css" rel="stylesheet">
 <style type="text/css">
 #noticeListContainer{
@@ -100,7 +102,6 @@
 				<td><input type="checkbox" name="noticeCheck"></td>
 				<td>${list.num }</td>
 				<td><a href="#" class="noticeTitle" data-num="${list.num}">${list.title}</a></td>
-				<td><a href="#" class="noticeTitle" data-title="${list.title}">${list.title}</a></td>
 				<td>${list.wtime }</td>
 			</tr>
 			</c:forEach>

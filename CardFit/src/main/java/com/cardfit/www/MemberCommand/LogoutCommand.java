@@ -17,5 +17,15 @@ public class LogoutCommand implements Command{
 		session.removeAttribute("id");
 		session.removeAttribute("pw");
 		session.removeAttribute("sessionCheck");
+		if(session.getAttribute("counsellerName")!=null) {
+			session.removeAttribute("counsellerName");
+		}
+		if(session.getAttribute("company")!=null) {
+			session.removeAttribute("company");
+		}
+		if(session.getAttribute("division")!=null) {
+			session.removeAttribute("division");
+		}
+			
 	}
 }

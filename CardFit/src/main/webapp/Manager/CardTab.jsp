@@ -7,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>관리자 페이지</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
+
 <link href="./webapp/element/Default/Default.css" type="text/css"
 	rel="stylesheet">
 <style type="text/css">
@@ -94,9 +96,13 @@ input[name="modal_item"] {
 }
 /*모달창 공통 css 끝*/
 /*카드등록 탭 시작*/
+body{
+	width:1920px;
+	overflow: hidden;
+}
 #cardInsertContainer {
 	position: relative;
-	width: 42%;
+	width: 38%;
 	height: 780px;
 	overflow-y: scroll;
 	float: left;
@@ -154,15 +160,14 @@ input[name="modal_item"] {
 
 #rightContainer {
 	position: relative;
-	width: 57%;
-	height: 540px;
+	width: 60%;
 	float: right;
 }
 
 #cardCategory {
 	position: relative;
-	width: 100%;
-	height: 200px;
+	width: 80%;
+	height: 180px;
 	overflow-y: scroll;
 }
 
@@ -175,7 +180,7 @@ input[name="modal_item"] {
 
 #cardListContainer {
 	position: relative;
-	width: 100%;
+	width: 95%;
 	height: 540px;
 }
 
@@ -202,9 +207,6 @@ input[name="modal_item"] {
 	border-style: double;
 }
 
-.categoryTable tr:nth-child(2n+1) {
-	background-color: #f2f2f2;
-}
 
 #addRowBtn {
 	border: none;
@@ -260,6 +262,14 @@ input[name="modal_item"] {
 	rigth: 5vw;
 	border-radius: 4px;
 }
+
+#cardListTable tr td:nth-child(8), #cardListTable tr th:nth-child(8){
+        width: 400px; /* 원하는 너비로 설정하세요 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 10px;
+    }
 </style>
 </head>
 <body>

@@ -16,10 +16,13 @@ import com.cardfit.www.CardCommand.CardTotalRankingCommand;
 import com.cardfit.www.CardCommand.HeaderSearchCommand;
 import com.cardfit.www.CardCommand.SearchCardCommand;
 import com.cardfit.www.ManagerCommand.CardInssuanceOKCommand;
+import com.cardfit.www.ManagerCommand.CounsellerClearIssuanceCommand;
 import com.cardfit.www.ManagerCommand.CounsellerIssuanceOKCommand;
 import com.cardfit.www.ManagerCommand.CounsellerIssuancingCommand;
 import com.cardfit.www.ManagerCommand.CounsellerIssunacedListCommand;
 import com.cardfit.www.ManagerCommand.CounsellerLoginOKCommand;
+import com.cardfit.www.ManagerCommand.CounsellerModifyCommand;
+import com.cardfit.www.ManagerCommand.CounsellerModifyOKCommand;
 import com.cardfit.www.ManagerCommand.CounsellerRegisterCommand;
 import com.cardfit.www.ManagerCommand.DeleteCardOKCommand;
 import com.cardfit.www.ManagerCommand.DeleteNoticeOKCommand;
@@ -45,7 +48,7 @@ import com.cardfit.www.ManagerCommand.InsertNoticeOKCommand;
 import com.cardfit.www.ManagerCommand.InsertSmallCategoryCommnad;
 import com.cardfit.www.ManagerCommand.LoadCounsellerPageCommand;
 import com.cardfit.www.ManagerCommand.ManagerLoginOKCommand;
-import com.cardfit.www.ManagerCommand.counsellerClearIssuanceCommand;
+import com.cardfit.www.ManagerCommand.CounsellerDeleteInfoOKCommand;
 import com.cardfit.www.MemberCommand.ChangePWCommand;
 import com.cardfit.www.MemberCommand.CheckEmailCommnad;
 import com.cardfit.www.MemberCommand.DeleteSelfInfoCommand;
@@ -228,6 +231,8 @@ public class FrontController extends HttpServlet {
 			command = new CheckEmailCommnad();
 			command.excute(request, response);
 			out = response.getWriter();
+			response.setContentType("text/plain;charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
 			out.write(request.getAttribute("result") + "");
 		//카드찾기 서비스
 		}else if(commandName.equals("/SearchCardTest.do")) {
@@ -486,8 +491,14 @@ public class FrontController extends HttpServlet {
 			viewPage = "./Counseller/NoticeTab.jsp";
 			flag = true;
 		}else if(commandName.equals("/cModifyTab.do")) {
+			command = new CounsellerModifyCommand();
+			command.excute(request, response);
 			viewPage = "./Counseller/ModifyTab.jsp";
 			flag = true;
+		}else if(commandName.equals("/cModifyOK.do")){
+			command = new CounsellerModifyOKCommand();
+			command.excute(request, response);
+			
 		}else if(commandName.equals("/cDirectTab.do")) {
 			viewPage = "./Counseller/DirectTab.jsp";
 			flag = true;
@@ -503,10 +514,15 @@ public class FrontController extends HttpServlet {
 			out = response.getWriter();
 			out.write(request.getAttribute("result") + "");
 		}else if(commandName.equals("/counsellerClearIssuance.do")) {
-			command = new counsellerClearIssuanceCommand();
+			command = new CounsellerClearIssuanceCommand();
 			command.excute(request, response);
 			out = response.getWriter();
 			out.write(request.getAttribute("result")+"");
+		}else if(commandName.equals("/deleteCounsellerInfoOK.do")) {
+			command = new CounsellerDeleteInfoOKCommand();
+			command.excute(request, response);
+			viewPage = "index.do";
+			flag = true;
 		}
 		if(flag) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

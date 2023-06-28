@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>내 카드 찾기 테스트</title>
 <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <link href="./element/Default/Default.css" type="text/css" rel="stylesheet">
 <style type="text/css">
@@ -383,7 +383,7 @@ body{
 
 
 	// handle messages and answers
-	handleMessage(1, 100, function () {
+	handleMessage(1, 800, function () {
 		document.getElementById('answer1').style.display = 'block';
 
 		const answerButtons1 = document.querySelectorAll('#answer1 button');
@@ -457,7 +457,7 @@ body{
 	  const buttonValue = selectedButton.getAttribute('value'); // 버튼 요소의 value 속성 가져오기
 
 	  document.getElementById('answer' + answerGroupId).style.display = 'none';
-	  handleMessage(contentGroupId, 100, function () {
+	  handleMessage(contentGroupId, 800, function () {
 	    document.getElementById('answer' + (answerGroupId + 1)).style.display = 'block';
 	  });
 

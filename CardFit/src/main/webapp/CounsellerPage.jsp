@@ -7,11 +7,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>상담사 전용 페이지</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <link href="./element/Default/Default.css" type="text/css" rel="stylesheet">
 <style type="text/css">
 body {
 	width: 100%;
+}
+.logoImg {
+	position: absolute;
+	width: 240px;
+	height: 34.5px;
+	top: 38px;
+	left: 182px;
 }
 
 li {
@@ -85,16 +93,24 @@ header {
 	margin-right: 10%;
 	font-size: 18px;
 }
+#LNB a{
+	color:black;
+	text-decoration: none;
+}
+#logoElementId {
+  pointer-events: none;
+  cursor: default;
+}
 </style>
 <script src="https://kit.fontawesome.com/cecdbf634a.js"
 	crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
-		<c:import url="../element/Logo/Logo.jsp" />
+		<img class="logoImg" alt="" src="./source/svg/CF_logo_Blue.svg">
 		<div id="LNB">
 			<ul>
-				<li>로그아웃</li>
+				<li><a href="logout.do">로그아웃</a></li>
 			</ul>
 		</div>
 	</header>
@@ -106,7 +122,7 @@ header {
 						<li id="GNBTitle">${sessionScope.counsellerName } 사업자님</li>
 					</c:when>
 					<c:when test="${sessionScope.compnay ne null }">
-						<li id="GNBTitle">${sessionScope.counsellerName } 상담사님</li>
+						<li id="GNBTitle">${sessionScope.compnay } 상담사님</li>
 					</c:when>
 				</c:choose>
 				<li id="indexTab"><i class="fa-duotone fa-house"
@@ -163,6 +179,8 @@ header {
 				window.location.href = "cDeleteInfoTab.do";
 			});
 		});
+		
+
 	</script>
 </body>
 </html>

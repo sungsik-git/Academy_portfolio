@@ -6,34 +6,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>회원가입 완료</title>
+<link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <!-- <link href="./css/MemberRegisterOK.css" rel="stylesheet" type="text/css"> -->
 <link href="./element/Default/Default.css" type="text/css" rel="stylesheet">
 <style type="text/css">
-#finishBox{
+#loginOKContainer {
 	position: relative;
-	top: 40vh;
-	width: 30vw;
-	margin:0 auto;
-	text-align: center;
-	font-size: 24px;
+	top: 110px;
+	width: 100%;
+	height: 730px;
+	display: flex; /* Flexbox 사용 */
+	justify-content: center; /* 수평 가운데 정렬 */
+	align-items: center; /* 수직 가운데 정렬 */
 }
-input[type=button]{
+
+#messageContainer {
+	text-align: left;
+}
+
+#messageContainer input[type="button"]{
+	width:45%;
+	background-color: #E6EDFE;
+	color: #0042EC;
 	border: none;
-	background-color: #0042ec;
-	color: white;
-	padding: 5px 12px;
-	border-radius: 4px;
+	padding: 12px 5px;
+	font-size: 16px;
+	margin: 0 auto;
+	margin-left: 10px;
 }
 </style>
 </head>
 <body>
-	<c:import url="./element/Header/Header.jsp" />
-    <div id="finishBox">
-        <p>환영합니다.</p>
-        <p>회원가입이 완료되었습니다.</p>
-        <input type="button" value="로그인하기 >>" id="goLoginBtn">
-    </div>
+	<c:import url="./element/Header/Header.jsp"/>
+	<div id="loginOKContainer">
+		<div id="messageContainer">
+			<h1>환영합니다!</h1><br>
+			<h3>새로운 카드핏 회원이 되신걸 환영합니다!</h3><br>
+			<p>로그인을 하시고 서비스를 이용하시면 보다 편안하게 카드를 발급받아보실 수 있어요!<p><br>
+			<input type="button" value="로그인 화면으로 돌아가기" id="goLoginBtn">
+			<input type="button" value="홈페이지로 돌아가기" id="goHomeBtn">
+		</div>
+	</div>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -41,6 +55,11 @@ input[type=button]{
     	    window.location.href = "login.do";
     	  });
     	});
+    
+	var goHomeBtn = document.querySelector('#goHomeBtn');
+	goHomeBtn.addEventListener('click',function(){
+		window.location.href = "index.do";
+	})
     </script>
 </body>
 </html>

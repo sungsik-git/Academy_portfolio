@@ -42,10 +42,10 @@ body{
 	height: 200px;
 	margin-bottom: 20px;
 	margin-left: 30px;
-	background-color: #F2F6FE;
 	border-radius: 4px;
 	display: inline-block;
 	align-items: center; /* 수직 정렬 */
+	box-shadow: 0px 4px 5px rgb(0, 0, 0, 0.2);
 }
 .cardImgBox{
 	position: relative;
@@ -80,14 +80,13 @@ body{
 	text-align: center;
 }
 .contentElement span{
-	background-color: #FFF289;
-		text-align: center;
-		padding: 4px;
-		width:70px;
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		border-radius: 8px;
+	text-align: center;
+	padding: 4px;
+	width:70px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	border-radius: 8px;
 }
 .contentElement p:nth-child(3), .contentElement p:nth-child(4), .contentElement p:nth-child(5){
 	display: inline-block;
@@ -97,16 +96,15 @@ body{
 .contentElement table{
 	margin-top: 40px;
 	width: 100%;
-	border: 1px solid #99B3F7;
 }
 .contentElement caption{
 	font-size: 16px;
 	padding: 4px;
 }
 .contentElement tr td{
-	background-color: #A4A4FB;
+	border: solid 2px #A4A4FB;
 	padding: 10px 6px;
-	border-radius: 4px;
+	border-radius: 50px;
 	font-size: 12px;
 }
 .issForm {
@@ -125,9 +123,9 @@ body{
 	padding: 12px 6px;
 	font-size: 20px;
 	border: none;
-	background-color: #99B3F7;
+	background-color: #0042EC;
 	color: white;
-	border-radius: 4px;
+	border-radius: 50px;
 	cursor: pointer;
 }
 </style>

@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>회원가입</title>
+<link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <link href="./element/Default/Default.css" type="text/css"
 	rel="stylesheet">
 <style type="text/css">
@@ -39,7 +40,8 @@ margin: 5px 0;
 	background-color: #0042ec;
 	color: white;
 	padding: 6px;
-	border-radius: 4px;
+	border-radius: 8px;
+	font-size:16px;
 }
 #cardInfoTable tr th,#memberInfoTable tr th {
 	width: 30%;
@@ -93,16 +95,16 @@ input[type=button]{
 			<p>이름</p>
 			<input type="text" id="name" name="name" required placeholder="이름">
 			<p>주민등록번호</p>
-			<input type="text" id="regNumF" name="regNumF" required style="width:48.2%" placeholder="앞 6자리">
-			 - <input type="password" id="regNumB" name="regNumB" required style="width:48.2%" placeholder="뒤 7자리">
+			<input type="text" id="regNumF" name="regNumF" required style="width:46.2%" placeholder="앞 6자리">
+			 - <input type="password" id="regNumB" name="regNumB" required style="width:46.2%" placeholder="뒤 7자리">
 			<p>전화번호</p>
 			<input type="text" id="phone" name="phone" required placeholder="전화번호">
 			<p>이메일</p>
 			<input type="email" name="email" id="email" required placeholder="이메일">
 			<p>주소</p>
 			<input type="text" id="sample4_postcode" placeholder="우편번호"
-				name="postcode" style="width:74%" class="postbox"> <input type="button"
-				onclick="sample4_execDaumPostcode()" value="우편번호 찾기" style="width:25%" class="postbox"><br>
+				name="postcode" style="width:72%" class="postbox"> <input type="button"
+				onclick="sample4_execDaumPostcode()" value="우편번호 찾기" style="width:23%" class="postbox"><br>
 			<input type="text" id="sample4_roadAddress" placeholder="도로명주소" required name="roadAddress" class="postbox">  <input
 				type="text" id="sample4_jibunAddress" placeholder="지번주소" required name="dibunAddress" class="postbox"> <span
 				id="guide" style="color: #999; display: none"></span> <input

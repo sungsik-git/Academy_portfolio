@@ -6,22 +6,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>상담사 페이지</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <style>
 #directPageContainer{
 	position: relative;
-	top: 15vh;
-	width: 75%;
-	margin: 0 auto;
 	float: right;
+	width: 70%;
+	top: 150px;
 	text-align: center;
-	height: 530px;
+	boder:2px solid red;
+	height: 150px;
 }
 </style>
 </head>
 <body>
 	<c:import url="../CounsellerPage.jsp"/>
-	
+	<div id="directPageContainer">
+		<c:import url="../HelpDirect.jsp"></c:import>
+	</div>
 	
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript">

@@ -32,7 +32,6 @@ body {
 	height: 200px;
 	margin-bottom: 20px;
 	margin-left: 30px;
-	background-color: #F2F6FE;
 	border-radius: 4px;
 	display: inline-block;
 	align-items: center; /* 수직 정렬 */
@@ -73,7 +72,7 @@ body {
 	width: 10%;
 	right: 10px;
 	top: 10px;
-	background-color: #99B3F7;
+	background-color: #0042EC;
 	color: white;
 	border: none;
 	padding:4px;
@@ -106,8 +105,6 @@ body {
 	text-align: left;
 }
 .contentElement span{
-	background-color: #FFF289;
-	text-align: center;
 	padding: 4px;
 	width:70px;
 	display: block;
@@ -122,16 +119,15 @@ body {
 .contentElement table{
 	margin-top: 10px;
 	width: 100%;
-	border: 1px solid #99B3F7;
 }
 .contentElement caption{
 	font-size: 16px;
 	padding: 4px;
 }
 .contentElement tr td{
-	background-color: #A4A4FB;
+	border: solid 2px gray;
 	padding: 10px 6px;
-	border-radius: 4px;
+	border-radius: 50px;
 	font-size: 14px;
 	font-weight: 400;
 }

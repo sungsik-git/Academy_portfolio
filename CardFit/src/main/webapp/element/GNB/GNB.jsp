@@ -64,68 +64,72 @@
 			<li id="control1">서비스 소개</li>
 			<li id="control2">나에게 맞는 카드</li>
 			<li id="control3">카드 순위</li>
+			<li id="control4">상담사 전용</li>
 		</ul>
 	</nav>
 	<script type="text/javascript" src="./js/jquery.js"></script>
 	<script type="text/javascript">
+	var currentPageUrl = window.location.href;
 	$(document).ready(function() {
 	    $("#control1").on('click', function(event) {
-	        // 현재 페이지 URL을 가져옵니다.
-	        var currentPageUrl = window.location.href;
 
-	        // 현재 페이지 URL이 "index.do"인 경우에만 스크롤 이벤트를 실행합니다.
 	        if (currentPageUrl === "http://localhost:8080/CardFit/index.do") {
-	            // 스크롤할 위치의 Y 좌표를 지정합니다. 예시로 900으로 설정합니다.
-	            var scrollTo = 900;
-	            event.preventDefault(); // 기본 동작을 막음
+	            var scrollTo = 640;
+	            event.preventDefault(); 
 
-	            // 페이지의 위치로 스크롤 이동합니다.
 	            $('html, body').animate({
 	                scrollTop: scrollTo
 	            }, 300);
 	        } else {
-	            window.location.href = "index.do"; // index.do로 페이지 이동
+	            window.location.href = "index.do"; 
 	        }
 	    });
 	});
 	
 	$(document).ready(function() {
 	    $("#control2").on('click', function(event) {
-	        // 현재 페이지 URL을 가져옵니다.
-	        var currentPageUrl = window.location.href;
 
 	        if (currentPageUrl === "http://localhost:8080/CardFit/index.do") {
-	            // 스크롤할 위치의 Y 좌표를 지정합니다. 예시로 900으로 설정합니다.
-	            var scrollTo = 2100;
-	            event.preventDefault(); // 기본 동작을 막음
+	            var scrollTo = 3080;
+	            event.preventDefault(); 
 
-	            // 페이지의 위치로 스크롤 이동합니다.
 	            $('html, body').animate({
 	                scrollTop: scrollTo
 	            }, 300);
 	        } else {
-	            window.location.href = "index.do"; // index.do로 페이지 이동
+	            window.location.href = "index.do"; 
 	        }
 	    });
 	});
 	
 	$(document).ready(function() {
 	    $("#control3").on('click', function(event) {
-	        // 현재 페이지 URL을 가져옵니다.
-	        var currentPageUrl = window.location.href;
 
-	        // 현재 페이지 URL이 "index.do"인 경우에만 스크롤 이벤트를 실행합니다.
 	        if (currentPageUrl === "http://localhost:8080/CardFit/index.do") {
-	            // 스크롤할 위치의 Y 좌표를 지정합니다. 예시로 900으로 설정합니다.
-	            var scrollTo = 3000;
-	            event.preventDefault(); // 기본 동작을 막음
+	            var scrollTo = 3950;
+	            event.preventDefault(); 
 
-	            // 페이지의 위치로 스크롤 이동합니다.
 	            $('html, body').animate({
 	                scrollTop: scrollTo
 	            }, 300);
 	        } else {
-	            window.location.href = "index.do"; // index.do로 페이지 이동
+	            window.location.href = "index.do"; 
+	        }
+	    });
+	});
+	
+	$(document).ready(function() {
+	    $("#control4").on('click', function(event) {
+
+	        if (currentPageUrl === "http://localhost:8080/CardFit/index.do") {
+	            var scrollTo = 5000;
+	            event.preventDefault(); 
+
+	            $('html, body').animate({
+	                scrollTop: scrollTo
+	            }, 300);
+	        } else {
+	            window.location.href = "index.do"; 
 	        }
 	    });
 	});

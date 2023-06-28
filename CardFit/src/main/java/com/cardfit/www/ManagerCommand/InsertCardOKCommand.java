@@ -70,6 +70,7 @@ public class InsertCardOKCommand implements Command{
 			dto.setFee(multi.getParameter("fee"));
 			dto.setOutfee(multi.getParameter("outfee"));
 			dto.setRecord(multi.getParameter("record"));
+			dto.setCardDivision(multi.getParameter("cardDivision"));
 			dto.setReword(rewordStr);
 			
 			ManagerDAO dao =ManagerDAO.getManagerDAO();

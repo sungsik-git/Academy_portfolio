@@ -86,17 +86,17 @@ input[type=button]{
 	width:45%;
 }
 #rewordBox{
-	width:100%;
-	display: none;
+	width:auto;
 	padding: 10px 6px;
 	border-radius: 4px;
 	font-size: 20px;
 	text-align: center;
 }
 #rewordBox span{
-	background-color: #A4A4FB;
-	border-radius: 4px;
+	border: 2px solid gray;
+	border-radius: 50px;
 	padding: 4px;
+	font-size: 12px;
 }
 </style>
 <link rel="stylesheet"
@@ -121,9 +121,6 @@ input[type=button]{
 				<tr>
 					<th>카드사</th>
 					<td><input type="text" value="${cardInfo.company }" readonly="readonly" name="company" class="cardInfo"></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="button" value="상세정보" id="showRewordBtn"></td>
 				</tr>
 				<tr>
 					<td colspan="2">
@@ -187,14 +184,7 @@ input[type=button]{
 		</form>
 		<script type="text/javascript" src="./js/jquery.js"></script>
 		<script type="text/javascript">
-		$('#showRewordBtn').on('click', function() {
-			  var rewordBox = $('#rewordBox');
-			  if (rewordBox.css('display') === 'none') {
-			    rewordBox.css('display', 'block');
-			  } else {
-			    rewordBox.css('display', 'none');
-			  }
-			});
+
 
 
 		var dateSelector = document.querySelector('.dateSelector');

@@ -71,7 +71,6 @@ input{
 	padding-top: 20px;
 }
 </style>
-<link href="./element/Default/Default.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 	<c:import url="./element/Logo/Logo.jsp" />

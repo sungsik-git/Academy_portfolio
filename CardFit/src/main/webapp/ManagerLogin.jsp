@@ -7,12 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>관리자 로그인</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <link href="./element/Default/Default.css" type="text/css"
 	rel="stylesheet">
 <style>
 body {
-	position: relative; width : 1920;
+	position: relative; width : 1920px;
 	height: 800px;
 	width: 1920;
 }
@@ -73,15 +74,19 @@ form p {
 	margin: 0;
 	text-align: left;
 }
-.linkContainer{
+.linkContainer {
 	position: relative;
 	width: 100%;
+	text-align: center;
 }
-form a {
-	position: relative;
-	left: 10%;
+
+.linkContainer a {
+position:relative;	
+	display: inline-block;
 	padding: 8px;
-	float: left;
+	width: 30%;
+	margin: 0 5px; 
+	
 }
 
 
@@ -132,7 +137,7 @@ input[type=submit] {
 						비밀번호를 다시 확인해주세요.</p>
 				</c:if>
 				<div class="linkContainer">
-					<a href="CounsellerRegister.do">회원가입</a><br> 
+					<a href="CounsellerRegister.do">회원가입</a>
 					<a href="CounsellerRegister.do">아이디 비밀번호 찾기</a><br>
 				</div> 
 				<input type="hidden" name="divisionCheck" value="c"> 
@@ -153,7 +158,6 @@ input[type=submit] {
 						비밀번호를 다시 확인해주세요.</p>
 				</c:if>
 				<div class="linkContainer">
-					<a href="">관리자 권한요청</a><br>
 				</div> 
 				<input type="hidden" name="divisionCheck" value="m"> <input type="submit"
 					value="로그인">

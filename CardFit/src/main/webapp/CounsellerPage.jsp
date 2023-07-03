@@ -27,7 +27,6 @@ li {
 }
 
 * {
-	font-family: Pretendard-Bold;
 	padding: 0;
 	margin: 0;
 }
@@ -118,11 +117,11 @@ header {
 		<div id="GNB">
 			<ul>
 				<c:choose>
-					<c:when test="${sessionScope.company eq null }">
-						<li id="GNBTitle">${sessionScope.counsellerName } 사업자님</li>
+					<c:when test="${sessionScope.company eq null}">
+						<li id="GNBTitle">${sessionScope.counsellerName }사업자님</li>
 					</c:when>
-					<c:when test="${sessionScope.compnay ne null }">
-						<li id="GNBTitle">${sessionScope.compnay } 상담사님</li>
+					<c:when test="${sessionScope.company ne null}">
+						<li id="GNBTitle">${sessionScope.company }상담사님</li>
 					</c:when>
 				</c:choose>
 				<li id="indexTab"><i class="fa-duotone fa-house"

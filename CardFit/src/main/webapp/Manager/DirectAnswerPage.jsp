@@ -13,39 +13,47 @@
 #directContainer {
   width: 100%;
   height: 300px;
-  paading-bottom:50px;
+  padding-bottom: 50px;
 }
 
-#directTable, #answerTable {
+#directTable,
+#answerTable {
   width: 100%;
   border-collapse: collapse;
+}
+
+#answerTable p:first-child{
+	margin : 30px auto;
+	background-color: #0042EC;
+	color: white;
 }
 
 #directTable th,
 #directTable td,
 #answerTable th,
 #answerTable td {
-  padding: 4px;
+  padding: 12px;
   border-bottom: 1px solid #ddd;
   text-align: left;
+  font-size: 16px;
 }
 
 #directTable th,
 #answerTable th {
   width: 30%;
   background-color: #f2f2f2;
-    text-align: center;
-  
+  text-align: center;
 }
 
 #directTable td,
 #answerTable td {
   width: 70%;
-  max-height: 60px;
+  max-height: 100px; 
   overflow: auto;
-  padding:8px;
-}
-
+  padding: 8px;
+  white-space: pre-wrap; 
+  word-break: break-all; 
+  }
 
 #directTable td::-webkit-scrollbar {
   width: 5px;
@@ -60,7 +68,27 @@
   background-color: #f2f2f2;
 }
 
+#answerTable {
+  margin-top: 20px;
+}
+
+#answerTable th {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+#answerTable td {
+  padding: 8px;
+}
+
+#answerTable img {
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+}
+
 </style>
+
 </head>
 <body>
 	<div id="directContainer">
@@ -83,7 +111,7 @@
 			<table id="answerTable">
 			<c:if test="${idto.answercheck eq 1 }">
 				<c:set var="adto" value="${answerdto }"/>
-				답변
+				<p>답변</p>
 				<img alt="" src="../source/svg/line.svg">
 				<tr>
 					<th>답변일</th>

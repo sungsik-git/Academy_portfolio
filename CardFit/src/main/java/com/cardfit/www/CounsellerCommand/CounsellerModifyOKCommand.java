@@ -1,4 +1,4 @@
-package com.cardfit.www.ManagerCommand;
+package com.cardfit.www.CounsellerCommand;
 
 import java.io.IOException;
 

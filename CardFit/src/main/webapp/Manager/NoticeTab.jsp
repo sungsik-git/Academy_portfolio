@@ -200,7 +200,7 @@
     $("#listDeleteBtn").click(function() {
         var checkedValues = [];
         $("input[name='noticeCheck']:checked").each(function() {
-          checkedValues.push($(this).closest("tr").find("td:eq(1)").text()); // 예시로 ID 값을 가져오도록 설정
+          checkedValues.push($(this).closest("tr").find("td:eq(1)").text()); 
         });
 
         if (checkedValues.length === 0) {

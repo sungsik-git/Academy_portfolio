@@ -55,7 +55,7 @@
 #rightBox p {
 	padding: 2px;
 }
-.clearBtn{
+#clearBtn{
 	position: relative;
 	width: 20%;
 	height: 30px;
@@ -142,9 +142,9 @@
 					<p>발급신청일 : ${list.requestDate }</p>
 					<p>연락가능 날짜 : ${list.contactableDate }</p>
 					<p>연락가능 시간 : ${list.startTime } ~ ${list.endTime }</p>
-					<input type="button" value="발급완료" class="clearBtn"> 
-					<input type="hidden" value="${list.cardName }" name="cardName">
-					<input type="hidden" value="${list.num }" name="num">
+						<input type="hidden" value="${list.cardName }" name="cardName">
+						<input type="hidden" value="${list.num }" name="num">
+						<input type="button" value="발급완료" id="clearBtn">
 				</div>
 			</div>
 		</c:forEach>
@@ -152,8 +152,8 @@
 	</div>
 	<script src="../js/jquery.js" type="text/javascript"></script>
 	<script>
-		$(document).ready(function() {
-			$('.clearBtn').on('click', function(e) {
+	 	$(document).ready(function() {
+			$('#clearBtn').on('click', function(e) {
 				e.preventDefault();
 
 				var cardName = $('input[name="cardName"]').val();
@@ -176,7 +176,7 @@
 					}
 				});
 			});
-		});
+		}); 
 	</script>
 
 </body>

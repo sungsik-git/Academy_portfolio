@@ -7,22 +7,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>아이디/비밀번호 찾기</title>
+ <link rel="shorcut icon" type="image/x-icon" href="./source/svg/CF_logo_Symbol.svg">
 <!-- <link href="./css/searchIDPW.css" type="text/css" rel="stylesheet"> -->
+<link href="./element/Default/Default.css" type="text/css" rel="stylesheet">
 <style type="text/css">
 @charset "UTF-8";
-@font-face {
-	font-family: 'Pretendard-Bold';
-	src: url('font/Pretendard-Bold.ttf') format('truetype');
-}
 
-* {
-	font-family: Pretendard-Bold;
-	padding: 0;
-	margin: 0;
-}
 body{
 	width:600px; 
 	height:450px;
+}
+#mainBox{
+	position:relative;
+	width:80%;
+	margin: 0 auto;
+	height: 70%;
+	top:13vh;
 }
 form{
 	padding : 7px;
@@ -37,13 +37,7 @@ td{
 	position: relative;
  	vertical-align: bottom;
  }
-#mainBox{
-	position:relative;
-	width:80%;
-	margin: 0 auto;
-	height: 70%;
-	top:13vh;
-}
+
 input{
   height: 32px;
   border: 0;
@@ -64,7 +58,7 @@ input{
 	position: absolute;
 	width:100px;
 	bottom: 30px;
-	right: 12vw;
+	right: 30vw;
 }
 
 .btnBox{

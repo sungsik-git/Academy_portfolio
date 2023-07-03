@@ -48,26 +48,32 @@ form p{
 }
   </style>
 </head>
-<body>
-	<div id="writerContainer">
-		<form action="insertNotice.do" method="post">
-			<input type="text" name="title" placeholder="공지사항의 제목을 입력하세요">
-			<p>중요공지<input type="checkbox" name="emphasis" id="emphasis"><p>
-			<textarea id="summernote" name="editordata"></textarea>
-			<input type="submit" value="등록">
-		</form>
-	</div>
-	<script>
-    $(document).ready(function() {
-        $('#summernote').summernote({
-  		  height: 350,
-		  minHeight: null,             // 최소 높이
-		  maxHeight: null,             // 최대 높이
-		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
-		  lang: "ko-KR",					// 한글 설정
-		  placeholder: '공지사항 내용을 입력해주세요'	//placeholder 설정
-  		  });
+<div id="writerContainer">
+  <form id="noticeForm" action="insertNotice.do" method="post">
+    <input type="text" name="title" placeholder="공지사항의 제목을 입력하세요">
+    <p>중요공지<input type="checkbox" name="emphasis" id="emphasis"></p>
+    <textarea id="summernote" name="editordata"></textarea>
+    <input type="submit" value="등록">
+  </form>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#summernote').summernote({
+      height: 350,
+      minHeight: null,
+      maxHeight: null,
+      focus: true,
+      lang: "ko-KR",
+      placeholder: '공지사항 내용을 입력해주세요'
     });
-  </script>
+    
+    document.getElementById("noticeForm").addEventListener("submit", function(e) {
+      var emphasisCheckbox = document.getElementById("emphasis");
+      var emphasisValue = emphasisCheckbox.checked ? "1" : "0";
+      emphasisCheckbox.setAttribute("value", emphasisValue);
+    });
+  });
+</script>
 </body>
 </html>

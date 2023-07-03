@@ -1,4 +1,4 @@
-package com.cardfit.www.ManagerCommand;
+package com.cardfit.www.CounsellerCommand;
 
 import java.io.IOException;
 
@@ -10,19 +10,16 @@ import javax.servlet.http.HttpSession;
 import com.cardfit.www.DAO.ManagerDAO;
 import com.cardfit.wwwCommand.Command;
 
-public class CounsellerIssuanceOKCommand implements Command{
+public class CounsellerDeleteInfoOKCommand implements Command{
 
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ManagerDAO dao = ManagerDAO.getManagerDAO();
-		int num = Integer.parseInt(request.getParameter("num")); 
 		
 		HttpSession session = request.getSession();
-		String counsellerName = String.valueOf(session.getAttribute("counsellerName"));
-		System.out.println(counsellerName);
+		String id = String.valueOf(session.getAttribute("id"));
 		
-		int result = dao.changeissCondition1(num, counsellerName);
-		request.setAttribute("result", result);
+		int result = dao.deleteCounsellerInfo(id);
+		System.out.println(result);
 	}
-	
 }

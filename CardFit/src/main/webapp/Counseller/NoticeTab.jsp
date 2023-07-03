@@ -91,7 +91,7 @@
 	</div>
 	
 	<div id="QNAContainer">
-	<h2>Q$A</h2>
+	<h2>Q&A</h2>
 	<table id="QNABox">
 			<tr>
 				<th>번호</th>
@@ -184,7 +184,7 @@
                     $('#QNAContainer').html(response).show().css({
                         'width': '65%',
                         'position': 'relative',
-                        'left' : '-5vw',
+                        'left' : '0vw',
                         'top': '3vh',
                         'margin' : '0 auto'
                     });

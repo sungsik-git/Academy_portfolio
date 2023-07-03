@@ -1,4 +1,4 @@
-package com.cardfit.www.ManagerCommand;
+package com.cardfit.www.CounsellerCommand;
 
 import java.io.IOException;
 
@@ -33,9 +33,7 @@ public class CounsellerLoginOKCommand implements Command{
 		        session.setAttribute("pw", pw);
 		        session.setAttribute("counsellerName", dto.getName());
 		        session.setAttribute("division", dto.getDivision());
-		        if(dto.getCompany()!=null) {
-		        	session.setAttribute("company", dto.getCompany());
-		        }
+		        session.setAttribute("company", dto.getCompany());
 		    } else {
 		        response.sendRedirect("Authority.jsp");
 		    }

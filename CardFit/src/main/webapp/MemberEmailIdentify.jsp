@@ -10,7 +10,7 @@
 <style type="text/css">
 body{
 	position : relative;
-	width: 100vw;
+	width: 1920px;
 	height: 100vh;
 }
 h3{
@@ -21,7 +21,7 @@ h3{
 }
 #mainContainer{
 	position: relative;
-	width: 40vw;
+	width: 40%;
 	height: 30vh;
 	margin: 0 auto;
 	top: 25vh;
@@ -33,24 +33,33 @@ h3{
 }
 #identifyEmailTitle{
 	position: relative;
+	margin-bottom: 20px;
 	
 }
+#identifyEmail img{
+	width:100%;
+}
 input[type=email]{
-	width:70vh;
-	padding: 5px;
-	margin-bottom: 30px;
-}
-input[type=checkbox]{
+	width:80%;
 	padding: 8px;
+	margin-bottom: 30px;
+	font-size: 16px;
 }
+
 #checkTitle{
 	margin-top: 30px;
 }
 #checkEmailBtn{
-	padding: 5px;
+	width:16%;
+	padding: 10px;
 	background: none;
 	border: 1px solid #49484B;
 	color: #49484B;
+}
+#checkEmailBtn:hover{
+	background-color: #0042EC;
+	border: 1px solid #49484B;
+	color: white;
 }
 .btn1{
 	position: relative;
@@ -68,6 +77,7 @@ input[type=checkbox]{
 	text-decoration: none;
 }
 input[type=checkbox]{
+	padding: 8px;
 	margin: 10px 0;
 }
 </style>
@@ -85,7 +95,7 @@ input[type=checkbox]{
 	            <input type="submit" id="checkEmailBtn" value="이메일 인증">
 	            <div id="emailCheckMsg"></div>
 	        </form>
-	            <c:import url="./source/svg/line.svg"/>
+	            <img src="./source/svg/line.svg"/>
 	            <p class="title" id="checkTitle">이용약관 동의</p>	                    
 	            <input type="checkbox" id="checkAll"><label for="checkAll">전체동의하기</label><br>
 	            <input type="checkbox" id="box1" >[필수]카드핏 약관 동의<br>
@@ -99,13 +109,11 @@ input[type=checkbox]{
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script>
     $(document).ready(function() {
-    	  // checkAll 체크 및 해제 시 box1, box2 체크 상태 변경
     	  $("#checkAll").on("change", function() {
     	    var isChecked = $(this).prop("checked");
     	    $("#box1, #box2").prop("checked", isChecked);
     	  });
 
-    	  // box1, box2 체크 상태 변경 시 checkAll 체크 상태 변경
     	  $("#box1, #box2").on("change", function() {
     	    var box1Checked = $("#box1").prop("checked");
     	    var box2Checked = $("#box2").prop("checked");
@@ -113,7 +121,6 @@ input[type=checkbox]{
     	    $("#checkAll").prop("checked", allChecked);
     	  });
 
-    	  // 다음 버튼 클릭 시 체크 여부 확인 후 이동 또는 알림 출력
     	  $(".btn").on("click", function(e) {
     	    var box1Checked = $("#box1").prop("checked");
     	    var box2Checked = $("#box2").prop("checked");
@@ -130,7 +137,7 @@ input[type=checkbox]{
     
 	$(document).ready(function() {
     $("#checkEmailBtn").on("click", function(event) {
-        event.preventDefault(); // 기본 폼 제출 동작 방지
+        event.preventDefault(); 
         
         var registerEmail = $("#registerEmail").val();
     
@@ -142,15 +149,17 @@ input[type=checkbox]{
             success: function(result) {
                 if (result == 0) {
                     var newForm = $("<form>").attr("method", "post");
-                    var input1 = $("<input>").attr("type", "text").attr("name", "userNumber").attr("id", "userNumber");
-                    var submitButton = $("<input>").attr("type", "submit").attr("value", "인증번호 확인").attr("id", "emailIdentiBtn");
+                    var input1 = $("<input>").attr("type", "text").attr("name", "userNumber").attr("id", "userNumber").attr("placeholder", "인증번호 6자리 입력")
+                    .css({"padding":"6px","font-size":"16px"});
+                    var submitButton = $("<input>").attr("type", "submit").attr("value", "인증번호 확인").attr("id", "emailIdentiBtn")
+                    .css({"padding":"8px", "background":"none", "border":"solid 2px #0042EC", "margin-left":"4px"});
                     var newDiv = $('<div>').attr("id","emailCheckMsg")
                     newForm.append(input1);
                     newForm.append(submitButton);
                     $("#identifyEmailForm").append(newForm);
 
                     $("#emailIdentiBtn").on("click", function(event) {
-                        event.preventDefault(); // Prevent form submission
+                        event.preventDefault(); 
 
                         var userNumber = $('#userNumber').val();
                         $.ajax({
@@ -161,8 +170,8 @@ input[type=checkbox]{
                             success: function(result) {
                                 if (result === "0") {
                                     $("#identifyEmailForm").html("<p>인증완료</p>").css("color","red");
-                                } else {
-                                    $('#emailCheckMsg').html("인증실패");
+                                } else if(result ==="1"){
+                                    $('#emailCheckMsg').html("인증번호를 다시 확인해주세요").css("color","red");
                                 }
                             },
                         });

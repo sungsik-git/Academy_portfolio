@@ -14,11 +14,6 @@
 	src: url('font/Pretendard-Bold.ttf') format('truetype');
 }
 
-* {
-	font-family: Pretendard-Bold;
-	padding: 0;
-	margin: 0;
-}
 body{
 	width:600px; 
 	height:450px;
@@ -51,7 +46,7 @@ body{
 	position: absolute;
 	width:100px;
 	bottom: 30px;
-	right: 12vw;
+	right: 30vw;
 }
 </style>
 </head>

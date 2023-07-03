@@ -908,7 +908,7 @@ public class ManagerDAO {
 	/* 회사별 발급상태에 따른 카드 수 */
 	public int countCompanyIssuance(int issCondition, String company) {
 		int cnt = 0;
-		final String COUNT_ISSUANCE_SQL = "SELECT COUNT(*) FROM " + ISSUANCE_TABLE + " WHERE issCondition = ? AND company = ?";
+		final String COUNT_ISSUANCE_SQL = "SELECT COUNT(*) FROM " + ISSUANCE_TABLE + " WHERE issCondition = ? AND cardCompany = ?";
 
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(COUNT_ISSUANCE_SQL)){

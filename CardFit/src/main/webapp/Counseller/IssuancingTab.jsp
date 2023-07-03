@@ -98,7 +98,7 @@ input[type=button] {
 						<td><input type="checkbox" name="issuanceCheck"></td>
 						<td>${list.num }</td>
 						<td>${list.requestDate }</td>	
-						<td>${list.cardCompany }</td>
+						<td>${list.company }</td>
 						<td>${list.cardName }</td>
 						<td>${list.userName }</td>
 						<td>${list.contactableDate }</td>

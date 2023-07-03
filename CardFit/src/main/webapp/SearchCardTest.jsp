@@ -383,67 +383,67 @@ body{
 
 
 	// handle messages and answers
-	handleMessage(1, 800, function () {
+	handleMessage(1, 600, function () {
 		document.getElementById('answer1').style.display = 'block';
 
 		const answerButtons1 = document.querySelectorAll('#answer1 button');
 		answerButtons1.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(1, 2, event); // 수정된 부분: event 추가
+				handleAnswerClick(1, 2, event); 
 			});
 		});
 
 		const answerButtons2 = document.querySelectorAll('#answer2 button');
 		answerButtons2.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(2, 3, event); // 수정된 부분: event 추가
+				handleAnswerClick(2, 3, event); 
 			});
 		});
 
 		const answerButtons3 = document.querySelectorAll('#answer3 button');
 		answerButtons3.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(3, 4, event); // 수정된 부분: event 추가
+				handleAnswerClick(3, 4, event); 
 			});
 		});
 
 		const answerButtons4 = document.querySelectorAll('#answer4 button');
 		answerButtons4.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(4, 5, event); // 수정된 부분: event 추가
+				handleAnswerClick(4, 5, event); 
 			});
 		});
 
 		const answerButtons5 = document.querySelectorAll('#answer5 button');
 		answerButtons5.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(5, 6, event); // 수정된 부분: event 추가
+				handleAnswerClick(5, 6, event); 
 			});
 		});
 
 		const answerButtons6 = document.querySelectorAll('#answer6 button');
 		answerButtons6.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(6, 7, event); // 수정된 부분: event 추가
+				handleAnswerClick(6, 7, event); 
 			});
 		});
 		const answerButtons7 = document.querySelectorAll('#answer7 button');
 		answerButtons7.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(7, 8, event); // 수정된 부분: event 추가
+				handleAnswerClick(7, 8, event); 
 			});
 		});
 
 		const answerButtons8 = document.querySelectorAll('#answer8 button');
 		answerButtons8.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(8, 9, event); // 수정된 부분: event 추가
+				handleAnswerClick(8, 9, event); 
 			});
 		});
 		const answerButtons9 = document.querySelectorAll('#answer9 button');
 		answerButtons9.forEach(function (button) {
 			button.addEventListener('click', function (event) {
-				handleAnswerClick(9, 9, event); // 수정된 부분: event 추가
+				handleAnswerClick(9, 9, event); 
 			});
 		});
 	});
@@ -457,7 +457,7 @@ body{
 	  const buttonValue = selectedButton.getAttribute('value'); // 버튼 요소의 value 속성 가져오기
 
 	  document.getElementById('answer' + answerGroupId).style.display = 'none';
-	  handleMessage(contentGroupId, 800, function () {
+	  handleMessage(contentGroupId, 600, function () {
 	    document.getElementById('answer' + (answerGroupId + 1)).style.display = 'block';
 	  });
 

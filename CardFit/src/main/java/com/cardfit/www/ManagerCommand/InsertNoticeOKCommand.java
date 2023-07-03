@@ -23,10 +23,10 @@ public class InsertNoticeOKCommand implements Command{
 		String emphasis = request.getParameter("emphasis");
 		System.out.println(emphasis);
 		
-		if(emphasis.equals("on")) {
+		if("on".equals(emphasis)) {
 			dto.setEmphasis(1);
 			}
-		else if(emphasis.equals(null)) {
+		if(emphasis.equals("on")) {
 			dto.setEmphasis(0);
 		}
 		int result = dao.insertNotice(dto);

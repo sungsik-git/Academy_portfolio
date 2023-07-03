@@ -24,20 +24,23 @@ public class SearchIDPWCommand implements Command{
 		String regNum = request.getParameter("regNumF") + request.getParameter("regNumB");
 		String flag = request.getParameter("flag");
 		String id = request.getParameter("id");
-		
 		dto = dao.searchIDPW(name, regNum);
 		request.setAttribute("dto", dto);
 		
-		if(flag.equals("0")) {
-			request.setAttribute("flag", 0);
-		}else if(flag.equals("1")) {
-			if(id.equals(dto.getId())) {
-				request.setAttribute("flag", 1);
-				session.setAttribute("id", id);
-			}else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("searchIDPW.do");
-				dispatcher.forward(request, response);
-			}
+		
+		if (flag.equals("0")) {
+		    request.setAttribute("flag", 0);
+		} else if (flag.equals("1")) {
+		    if (id.equals(dto.getId())) {
+		        request.setAttribute("flag", 1);
+		        session.setAttribute("id", id);
+		    } else {
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("searchIDPW.do");
+		        dispatcher.forward(request, response);
+		    }
+		} else {
+		    request.setAttribute("flag", -1);
 		}
+
 	}
 }

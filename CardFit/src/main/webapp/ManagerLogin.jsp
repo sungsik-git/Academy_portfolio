@@ -138,7 +138,7 @@ input[type=submit] {
 				</c:if>
 				<div class="linkContainer">
 					<a href="CounsellerRegister.do">회원가입</a>
-					<a href="CounsellerRegister.do">아이디 비밀번호 찾기</a><br>
+					<a href="searchIDPW.do">아이디 비밀번호 찾기</a><br>
 				</div> 
 				<input type="hidden" name="divisionCheck" value="c"> 
 				<input type="submit" value="로그인">

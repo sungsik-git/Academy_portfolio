@@ -15,15 +15,16 @@ import com.cardfit.www.CardCommand.CardRewordRankingCommand;
 import com.cardfit.www.CardCommand.CardTotalRankingCommand;
 import com.cardfit.www.CardCommand.HeaderSearchCommand;
 import com.cardfit.www.CardCommand.SearchCardCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerClearIssuanceCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerDeleteInfoOKCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerIssuanceOKCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerIssuancingCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerIssunacedListCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerLoginOKCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerModifyCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerModifyOKCommand;
+import com.cardfit.www.CounsellerCommand.CounsellerRegisterCommand;
 import com.cardfit.www.ManagerCommand.CardInssuanceOKCommand;
-import com.cardfit.www.ManagerCommand.CounsellerClearIssuanceCommand;
-import com.cardfit.www.ManagerCommand.CounsellerIssuanceOKCommand;
-import com.cardfit.www.ManagerCommand.CounsellerIssuancingCommand;
-import com.cardfit.www.ManagerCommand.CounsellerIssunacedListCommand;
-import com.cardfit.www.ManagerCommand.CounsellerLoginOKCommand;
-import com.cardfit.www.ManagerCommand.CounsellerModifyCommand;
-import com.cardfit.www.ManagerCommand.CounsellerModifyOKCommand;
-import com.cardfit.www.ManagerCommand.CounsellerRegisterCommand;
 import com.cardfit.www.ManagerCommand.DeleteCardOKCommand;
 import com.cardfit.www.ManagerCommand.DeleteNoticeOKCommand;
 import com.cardfit.www.ManagerCommand.DeleteUserOKCommand;
@@ -40,6 +41,7 @@ import com.cardfit.www.ManagerCommand.GetNoticeListCommand;
 import com.cardfit.www.ManagerCommand.InsertCardOKCommand;
 import com.cardfit.www.ManagerCommand.GetCategoryListCommand;
 import com.cardfit.www.ManagerCommand.GetCompanyListCommand;
+import com.cardfit.www.ManagerCommand.GetCounsellerListCommand;
 import com.cardfit.www.ManagerCommand.GetDirectAnswerCommand;
 import com.cardfit.www.ManagerCommand.InsertCompanyCommand;
 import com.cardfit.www.ManagerCommand.InsertDirectAnswerCommand;
@@ -48,7 +50,6 @@ import com.cardfit.www.ManagerCommand.InsertNoticeOKCommand;
 import com.cardfit.www.ManagerCommand.InsertSmallCategoryCommnad;
 import com.cardfit.www.ManagerCommand.LoadCounsellerPageCommand;
 import com.cardfit.www.ManagerCommand.ManagerLoginOKCommand;
-import com.cardfit.www.ManagerCommand.CounsellerDeleteInfoOKCommand;
 import com.cardfit.www.MemberCommand.ChangePWCommand;
 import com.cardfit.www.MemberCommand.CheckEmailCommnad;
 import com.cardfit.www.MemberCommand.DeleteSelfInfoCommand;
@@ -365,8 +366,8 @@ public class FrontController extends HttpServlet {
 		}else if(commandName.equals("/CompanyTab.do")) {
 			command = new GetCompanyListCommand();
 			command.excute(request, response);
-//			Command command2 = new GetCounsellerListCommand();
-//			command2.excute(request, response);
+			Command command2 = new GetCounsellerListCommand();
+			command2.excute(request, response);
 			viewPage = "Manager/CompanyTab.jsp";
 			flag = true;
 		}else if(commandName.equals("/IssuanceTab.do")) {
@@ -498,17 +499,15 @@ public class FrontController extends HttpServlet {
 		}else if(commandName.equals("/cModifyOK.do")){
 			command = new CounsellerModifyOKCommand();
 			command.excute(request, response);
-			
+			viewPage = "./Counseller/ModifyTab.jsp";
+			flag = true;
 		}else if(commandName.equals("/cDirectTab.do")) {
 			viewPage = "./Counseller/DirectTab.jsp";
 			flag = true;
 		}else if(commandName.equals("/cDeleteInfoTab.do")) {
 			viewPage = "./Counseller/DeleteInfoTab.jsp";
 			flag = true;
-		}
-		
-		/*상담사 페이지 기능*/
-		else if(commandName.equals("/counsellerIssuanceOK.do")) {
+		}else if(commandName.equals("/counsellerIssuanceOK.do")) {
 			command = new CounsellerIssuanceOKCommand();
 			command.excute(request, response);
 			out = response.getWriter();

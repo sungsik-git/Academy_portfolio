@@ -18,6 +18,10 @@
 	boder:2px solid red;
 	height: 150px;
 }
+#deleteInfoContainer p:first-child{
+	font-size: 24px;
+	margin-bottom: 10px;
+}
 
 input[type=button] {
 	position: relative;

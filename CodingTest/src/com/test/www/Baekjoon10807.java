@@ -2,7 +2,7 @@ package com.test.www;
 
 import java.util.Scanner;
 
-public class Main {
+public class Baekjoon10807 {
 	public static void main(String[] args)  {
 		//총 N개의 정수가 주어졌을 때, 정수 v가 몇 개인지 구하는 프로그램을 작성하시오.
 		

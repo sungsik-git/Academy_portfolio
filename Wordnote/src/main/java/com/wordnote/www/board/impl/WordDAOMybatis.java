@@ -32,4 +32,19 @@ public class WordDAOMybatis{
 		System.out.println("===> Mybatis get random word");
 		return mybatis.selectOne("WordDAO.getRandomWord");
 	}
+	
+	public WordVO getRandomWrongWord(WordVO vo) {
+		System.out.println("===> Mybatis get Random Wrong Word");
+		return mybatis.selectOne("WordDAO.getRandomWrongWord");
+	}
+	
+	public void updateClear(WordVO vo) {
+		System.out.println("===> update word clear = 1");
+		mybatis.update("WordDAO.updateClear");
+	}
+	
+	public void updateWrong(WordVO vo) {
+		System.out.println("===> update word clear = 0");
+		mybatis.update("WordDAO.updateWrong");
+	}
 }

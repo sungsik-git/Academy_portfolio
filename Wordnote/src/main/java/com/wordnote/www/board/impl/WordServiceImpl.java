@@ -35,6 +35,24 @@ public class WordServiceImpl implements WordService{
 	public WordVO getRandomWord(WordVO vo) {
 		return dao.getRandomWordVO(vo);
 	}
+
+
+	@Override
+	public WordVO getRandomWrongWord(WordVO vo) {
+		return dao.getRandomWrongWord(vo);
+	}
+
+
+	@Override
+	public void updateClear(WordVO vo) {
+		dao.updateClear(vo);
+	}
+
+
+	@Override
+	public void updateWrong(WordVO vo) {
+		dao.updateWrong(vo);
+	}
 	
 
 }

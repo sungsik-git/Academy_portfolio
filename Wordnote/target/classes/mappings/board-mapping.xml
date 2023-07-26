@@ -28,4 +28,22 @@
 			SELECT * FROM WORD ORDER BY RAND() LIMIT 1
 		]]>
 	</select>
+	
+	<select id="getRandomWrongWord" resultType="word">
+		<![CDATA[
+			SELECT * FROM WORD WHERE clear=0 ORDER BY RAND() LIMIT 1
+		]]>
+	</select>
+	
+	<update id="updateClear">
+		<![CDATA[
+			UPDATE WORD SET clear=1 WHERE NUM = #{num} 
+		]]>
+	</update>
+	
+	<update id="updateWrong">
+		<![CDATA[
+			UPDATE WORD SET clear=0 WHERE NUM = #{num}
+		]]>
+	</update>
 </mapper>

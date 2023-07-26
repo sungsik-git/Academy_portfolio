@@ -1,11 +1,11 @@
 package com.wordnote.www;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.wordnote.www.board.impl.WordService;
 import com.wordnote.www.word.WordVO;
@@ -39,26 +39,32 @@ public class HomeController {
 		return "wordTestPage";
 	}
 	
-	@RequestMapping("/wordTestOfAll")
-	public String wordTestOfAll(WordVO vo, Model model){
-		model.addAttribute("randomWord", wordService.getRandomWord(vo));
-		return "wordTestOfAllPage";
-	}
-	
-	@RequestMapping("/wordTestOfWrong")
-	public String wordTestOfWrong(WordVO vo) {
-		return "wordTestOfWrongPage";
-	}
-	
-	@RequestMapping("/checkAanswer")
-	public int checkAanswer(HttpServletRequest request) {
-		int result =0;
-		
-		String answer = request.getParameter("answer");
-		System.out.println(answer);
-		String questionWord = request.getParameter("questionWord");
-		System.out.println(questionWord);
-		
-		return result; 
-	}
+	   @RequestMapping("/wordTestOfAll")
+	    public String wordTestOfAll(WordVO vo, Model model){
+	        model.addAttribute("randomWord", wordService.getRandomWord(vo));
+	        return "wordTestOfAllPage";
+	    }
+
+	    @RequestMapping("/wordTestOfWrong")
+	    public String wordTestOfWrong(WordVO vo, Model model) {
+	        model.addAttribute("randomWord", wordService.getRandomWrongWord(vo));
+	        return "wordTestOfWrongPage";
+	    }
+
+	    @RequestMapping("/updateClear")
+	    @ResponseBody
+	    public void updateClear(@RequestParam("wordNum") int wordNum) {
+	        WordVO vo = new WordVO();
+	        vo.setNum(wordNum);
+	        wordService.updateClear(vo);
+	    }
+
+	    @RequestMapping("/updateWrong")
+	    @ResponseBody
+	    public void updateWrong(@RequestParam("wordNum") int wordNum) {
+	        WordVO vo = new WordVO();
+	        vo.setNum(wordNum);
+	        wordService.updateWrong(vo);
+	    }
+
 }

@@ -15,4 +15,10 @@ public interface WordService {
 	List<WordVO> getWordListOfAll50(WordVO vo);
 	
 	WordVO getRandomWord(WordVO vo);
+	
+	WordVO getRandomWrongWord(WordVO vo);
+	
+	void updateClear(WordVO vo);
+	
+	void updateWrong(WordVO vo);
 }

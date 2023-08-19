@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         TabView{
-            ContentView(vm: AnimalViewModel())
+            ContentView(vm: vm)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("홈")

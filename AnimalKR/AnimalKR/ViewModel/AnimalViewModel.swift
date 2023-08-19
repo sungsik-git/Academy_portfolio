@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class AnimalViewModel: ObservableObject {
     
@@ -16,4 +17,17 @@ class AnimalViewModel: ObservableObject {
     
     //Gallery View
     @Published var selectedAnimal: String = "tiger"
+    
+    //GrideLayout
+    @Published var gridLayout: [GridItem] = [GridItem(.flexible())]
+    @Published var gridColumn: Double = 4.0
+    
+    init(){
+        gridSwitch()
+    }
+    
+    //func
+    func gridSwitch() {
+        gridLayout = Array(repeating: GridItem(.flexible()), count: Int(gridColumn))
+    }
 }

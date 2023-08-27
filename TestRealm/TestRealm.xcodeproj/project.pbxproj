@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31086D5C2A926F8500A24AFD /* TestRealmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31086D5B2A926F8500A24AFD /* TestRealmApp.swift */; };
+		31086D5E2A926F8500A24AFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31086D5D2A926F8500A24AFD /* ContentView.swift */; };
+		31086D602A926F8600A24AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31086D5F2A926F8600A24AFD /* Assets.xcassets */; };
+		31086D632A926F8600A24AFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31086D622A926F8600A24AFD /* Preview Assets.xcassets */; };
+		31086D652A926F8600A24AFD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31086D642A926F8600A24AFD /* Persistence.swift */; };
+		31086D682A926F8600A24AFD /* TestRealm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31086D662A926F8600A24AFD /* TestRealm.xcdatamodeld */; };
+		31086D6F2A9270F000A24AFD /* RealmSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31086D6E2A9270F000A24AFD /* RealmSwift.swift */; };
+		31086D712A92732A00A24AFD /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31086D702A92732A00A24AFD /* TestView.swift */; };
+		66A30F86D25E85F39EA3A0FF /* Pods_TestRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A4108ACB0BAA289909344D /* Pods_TestRealm.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		23A4108ACB0BAA289909344D /* Pods_TestRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31086D582A926F8500A24AFD /* TestRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31086D5B2A926F8500A24AFD /* TestRealmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRealmApp.swift; sourceTree = "<group>"; };
+		31086D5D2A926F8500A24AFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		31086D5F2A926F8600A24AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31086D622A926F8600A24AFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		31086D642A926F8600A24AFD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		31086D672A926F8600A24AFD /* TestRealm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestRealm.xcdatamodel; sourceTree = "<group>"; };
+		31086D6E2A9270F000A24AFD /* RealmSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSwift.swift; sourceTree = "<group>"; };
+		31086D702A92732A00A24AFD /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		41D9471EFC09660B1E398222 /* Pods-TestRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRealm.release.xcconfig"; path = "Target Support Files/Pods-TestRealm/Pods-TestRealm.release.xcconfig"; sourceTree = "<group>"; };
+		6E3AF60323F25E527F11EB34 /* Pods-TestRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRealm.debug.xcconfig"; path = "Target Support Files/Pods-TestRealm/Pods-TestRealm.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31086D552A926F8500A24AFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66A30F86D25E85F39EA3A0FF /* Pods_TestRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31086D4F2A926F8500A24AFD = {
+			isa = PBXGroup;
+			children = (
+				31086D5A2A926F8500A24AFD /* TestRealm */,
+				31086D592A926F8500A24AFD /* Products */,
+				79F6F3928995B50FCF9B4DDE /* Pods */,
+				48BB517EA11E061AF9582CCB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		31086D592A926F8500A24AFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31086D582A926F8500A24AFD /* TestRealm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31086D5A2A926F8500A24AFD /* TestRealm */ = {
+			isa = PBXGroup;
+			children = (
+				31086D5B2A926F8500A24AFD /* TestRealmApp.swift */,
+				31086D5D2A926F8500A24AFD /* ContentView.swift */,
+				31086D5F2A926F8600A24AFD /* Assets.xcassets */,
+				31086D642A926F8600A24AFD /* Persistence.swift */,
+				31086D662A926F8600A24AFD /* TestRealm.xcdatamodeld */,
+				31086D612A926F8600A24AFD /* Preview Content */,
+				31086D6E2A9270F000A24AFD /* RealmSwift.swift */,
+				31086D702A92732A00A24AFD /* TestView.swift */,
+			);
+			path = TestRealm;
+			sourceTree = "<group>";
+		};
+		31086D612A926F8600A24AFD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				31086D622A926F8600A24AFD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		48BB517EA11E061AF9582CCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23A4108ACB0BAA289909344D /* Pods_TestRealm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79F6F3928995B50FCF9B4DDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E3AF60323F25E527F11EB34 /* Pods-TestRealm.debug.xcconfig */,
+				41D9471EFC09660B1E398222 /* Pods-TestRealm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31086D572A926F8500A24AFD /* TestRealm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31086D6B2A926F8600A24AFD /* Build configuration list for PBXNativeTarget "TestRealm" */;
+			buildPhases = (
+				8FDBDB7486B49EF06FC92FFA /* [CP] Check Pods Manifest.lock */,
+				31086D542A926F8500A24AFD /* Sources */,
+				31086D552A926F8500A24AFD /* Frameworks */,
+				31086D562A926F8500A24AFD /* Resources */,
+				39AF33266743B5FBF523CB0D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestRealm;
+			productName = TestRealm;
+			productReference = 31086D582A926F8500A24AFD /* TestRealm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31086D502A926F8500A24AFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					31086D572A926F8500A24AFD = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 31086D532A926F8500A24AFD /* Build configuration list for PBXProject "TestRealm" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31086D4F2A926F8500A24AFD;
+			productRefGroup = 31086D592A926F8500A24AFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31086D572A926F8500A24AFD /* TestRealm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31086D562A926F8500A24AFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31086D632A926F8600A24AFD /* Preview Assets.xcassets in Resources */,
+				31086D602A926F8600A24AFD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39AF33266743B5FBF523CB0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestRealm/Pods-TestRealm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestRealm/Pods-TestRealm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestRealm/Pods-TestRealm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FDBDB7486B49EF06FC92FFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestRealm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31086D542A926F8500A24AFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31086D712A92732A00A24AFD /* TestView.swift in Sources */,
+				31086D652A926F8600A24AFD /* Persistence.swift in Sources */,
+				31086D5E2A926F8500A24AFD /* ContentView.swift in Sources */,
+				31086D5C2A926F8500A24AFD /* TestRealmApp.swift in Sources */,
+				31086D6F2A9270F000A24AFD /* RealmSwift.swift in Sources */,
+				31086D682A926F8600A24AFD /* TestRealm.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		31086D692A926F8600A24AFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		31086D6A2A926F8600A24AFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31086D6C2A926F8600A24AFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E3AF60323F25E527F11EB34 /* Pods-TestRealm.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestRealm/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com..TestRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		31086D6D2A926F8600A24AFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41D9471EFC09660B1E398222 /* Pods-TestRealm.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestRealm/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com..TestRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31086D532A926F8500A24AFD /* Build configuration list for PBXProject "TestRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31086D692A926F8600A24AFD /* Debug */,
+				31086D6A2A926F8600A24AFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31086D6B2A926F8600A24AFD /* Build configuration list for PBXNativeTarget "TestRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31086D6C2A926F8600A24AFD /* Debug */,
+				31086D6D2A926F8600A24AFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		31086D662A926F8600A24AFD /* TestRealm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				31086D672A926F8600A24AFD /* TestRealm.xcdatamodel */,
+			);
+			currentVersion = 31086D672A926F8600A24AFD /* TestRealm.xcdatamodel */;
+			path = TestRealm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 31086D502A926F8500A24AFD /* Project object */;
+}

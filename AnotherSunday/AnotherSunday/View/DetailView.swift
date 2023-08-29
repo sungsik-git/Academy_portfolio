@@ -17,11 +17,11 @@ struct DetailView: View {
     var body: some View {
         Form {
             Section(header: Text("User Detail")){
-                Text(selectedInfo.id)
+                Text("ID : " + selectedInfo.id)
                     .font(.headline)
-                Text(selectedInfo.name)
+                Text("Name : " + selectedInfo.name)
                     .font(.body)
-                Text(selectedInfo.phone)
+                Text("Phone : " + selectedInfo.phone)
                     .font(.body)
                 
                 Button {
@@ -29,16 +29,20 @@ struct DetailView: View {
                     self.mode.wrappedValue.dismiss()
                 } label: {
                     Text("Delete Info")
+                        .foregroundColor(Color.red)
                 }
 
                 NavigationLink{
                     // destination
                     EditInfoView(vm: vm, selectedInfo: $selectedInfo, isOnEditInfoView: $isOnEditInfoView)
                 } label: {
-                Text("Edit Info")
+                    Text("Edit Info")
+                        .foregroundColor(Color.blue)
                 }
             } //: Section
+            .padding()
         } //: Form
+        .navigationBarBackButtonHidden()
     }
 }
 

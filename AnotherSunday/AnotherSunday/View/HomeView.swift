@@ -22,34 +22,35 @@ struct HomeView: View {
             Image("LogoImage")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 60,height: 60)
-                .padding(30)
+                .frame(width: 80, height: 120)
+                .padding()
             
             
             Form {
-                Section(header: Text("Input Your Info")) {
-                    DataInput(title: "Name", userInput: $name)
-                    DataInput(title: "phone", userInput: $phone)
-                }
-                
                 NavigationLink(destination: ContentView(vm:vm), label: {
                     Image(systemName: "rectangle.portrait.and.arrow.forward.fill")
                     Text("Check UserInfo")
                 })
+                
+                Section(header: Text("Input Your Info")) {
+                    DataInput(title: "Name", userInput: $name)
+                    DataInput(title: "phone", userInput: $phone)
+                }
             }
             
             Button{
                 vm.addNewInfo(user: User(id: UUID().uuidString, name: name, phone: phone))
-                
+                name = ""
+                phone = ""
                 showAlert = true
-                
             } label: {
-            Text("send Messege")
+            Text("Send Messege")
             }
             .alert(isPresented: $showAlert){
                 Alert(title: Text("Message Sent"), message: Text("Will send message for you"))
             }
         } //: VStack
+        .navigationBarBackButtonHidden()
     }
 }
 

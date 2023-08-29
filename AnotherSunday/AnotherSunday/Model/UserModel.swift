@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Firebase
 
 struct User: Codable, Identifiable, Hashable {
     
     var id: String
     var name: String
-    var phone: String
+    var phone: String    
 }

@@ -12,6 +12,7 @@ import FirebaseDatabaseSwift
 class UserInfo: ObservableObject{
     @Published var users: [User] = []
     @Published var changeCount: Int = 0
+    @Published var hasLoadedData: Bool = false
     
     //Realtime Database 기본경로 저장
     let ref: DatabaseReference? = Database.database().reference()
@@ -22,6 +23,10 @@ class UserInfo: ObservableObject{
     
     //데이터 변경 관찰함수
     func listenToRealtimeDatabase(){
+        guard !hasLoadedData else{
+            return
+        }
+        
         
         guard let databasePath = ref?.child("users") else {
             return
@@ -101,6 +106,7 @@ class UserInfo: ObservableObject{
                     return
                 }
                 self.changeCount += 1
+                self.hasLoadedData = true
                 }
     } //: Function
     
@@ -112,7 +118,7 @@ class UserInfo: ObservableObject{
         self.ref?.child("users").child("\(user.id)").setValue([
             "id": user.id,
             "name" : user.name,
-            "phone" : user.phone
+            "phone" : user.phone,
         ])
     } //: Function
     
@@ -124,7 +130,7 @@ class UserInfo: ObservableObject{
         let updates: [String : Any ] = [
             "id" : user.id,
             "name" : user.name,
-            "phone" : user.phone
+            "phone" : user.phone,
          ]
         
         let childUpdate = ["user/\(user.id)": updates]

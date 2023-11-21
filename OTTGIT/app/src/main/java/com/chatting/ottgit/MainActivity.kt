@@ -1,23 +1,22 @@
 package com.chatting.ottgit
 
 import android.os.Bundle
-import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -50,7 +49,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    printText("WELCOME", "OTT-GIT", fontFamily = fontFamily)
+                    GreetingImage(
+                        "WELCOME",
+                        "OTT-GIT",
+                        fontFamily
+                    )
                 }
             }
         }
@@ -58,7 +61,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun printText(message: String, logo: String, fontFamily: FontFamily,modifier: Modifier = Modifier) {
+fun printText(
+    message: String,
+    logo: String,
+    fontFamily: FontFamily,
+    modifier: Modifier = Modifier
+) {
     Column(
         verticalArrangement = Arrangement.Center,
         modifier = modifier.padding(8.dp)
@@ -87,11 +95,36 @@ fun printText(message: String, logo: String, fontFamily: FontFamily,modifier: Mo
     }
 }
 
+@Composable
+fun GreetingImage(
+    message: String,
+    logo: String,
+    fontFamily: FontFamily,
+    modifier: Modifier = Modifier
+) {
+    val image = painterResource(R.drawable.ott_git_logo)
+    Box {
+        Image(
+            modifier = modifier,
+            painter = image,
+            contentDescription = null,
+        )
+        printText(
+            message,
+            logo,
+            fontFamily = fontFamily,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        )
+    }
+}
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     OTTGITTheme {
-        printText("WELCOME", "OTT-GIT", fontFamily = fontFamily)
+        GreetingImage("WELCOME", "OTT-GIT", fontFamily)
     }
 }

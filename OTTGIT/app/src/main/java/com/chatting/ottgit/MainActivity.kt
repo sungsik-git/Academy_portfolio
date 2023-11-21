@@ -16,7 +16,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -47,7 +50,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = colorResource(id = R.color.splashBackground)
                 ) {
                     GreetingImage(
                         "WELCOME",
@@ -105,9 +108,10 @@ fun GreetingImage(
     val image = painterResource(R.drawable.ott_git_logo)
     Box {
         Image(
-            modifier = modifier,
             painter = image,
             contentDescription = null,
+            contentScale = ContentScale.Crop,
+            alpha = 0.5F,
         )
         printText(
             message,
@@ -125,6 +129,6 @@ fun GreetingImage(
 @Composable
 fun GreetingPreview() {
     OTTGITTheme {
-        GreetingImage("WELCOME", "OTT-GIT", fontFamily)
+        GreetingImage("WELCOME", stringResource(R.string.ott_git), fontFamily)
     }
 }

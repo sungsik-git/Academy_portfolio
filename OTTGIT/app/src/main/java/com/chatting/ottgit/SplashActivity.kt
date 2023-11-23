@@ -16,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.chatting.ottgit.ui.theme.OTTGITTheme
+import com.kakao.sdk.auth.AuthCodeHandlerActivity
 
 class SplashActivity : AppCompatActivity() {
     private val splashTimeOut: Long = 3000
@@ -23,10 +24,10 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
-        }, 4500) // 시간 0.5초 이후 실행
+        }, 2500) // 시간 0.5초 이후 실행
         setContent {
             OTTGITTheme {
                 // A surface container using the 'background' color from the theme
@@ -42,7 +43,7 @@ class SplashActivity : AppCompatActivity() {
 }
 
 @Composable
-fun showLogo() {
+private fun showLogo() {
     val image = painterResource(id = R.drawable.ott_git_logo)
     Image(painter = image, contentDescription = null)
 }

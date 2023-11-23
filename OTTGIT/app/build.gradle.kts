@@ -1,7 +1,13 @@
+import java.io.FileInputStream
+import java.util.Properties;
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
+
+var properties = Properties()
+properties.load(FileInputStream("local.properties"))
 
 android {
     namespace = "com.chatting.ottgit"
@@ -13,11 +19,12 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField("String", "NATIVE_KEY", properties.getProperty("kakao_native_key"))
+
     }
 
     buildTypes {
@@ -38,6 +45,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -50,8 +58,7 @@ android {
 }
 
 dependencies {
-    implementation("com.kakao.sdk:v2-user:2.12.1")
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("com.kakao.sdk:v2-user:2.18.0") // 카카오 로그인
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.0")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
@@ -70,3 +77,4 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
+

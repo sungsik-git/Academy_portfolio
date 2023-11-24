@@ -6,6 +6,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".GlobalApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -33,6 +34,7 @@
 <!--            </intent-filter>-->
         </activity>
 
+        <!--        카카오 로그인 Activity-->
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
@@ -44,7 +46,7 @@
 
                 <data
                     android:host="oauth"
-                    android:scheme="kakaof56e2c574634afc8adbee6d19c2fd4c8" />
+                    android:scheme="string/kakao_oauth_host" />
             </intent-filter>
         </activity>
 
@@ -56,9 +58,6 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="akdfadfladflka" />
 
-        <activity
-            android:name=".GlobalApplication"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

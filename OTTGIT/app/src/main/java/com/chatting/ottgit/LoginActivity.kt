@@ -2,14 +2,17 @@
 
 package com.chatting.ottgit
 
-import android.content.res.Resources.Theme
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -27,11 +30,16 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
 import com.chatting.ottgit.ui.theme.OTTGITTheme
 
 class LoginActivity : AppCompatActivity() {
+
+    private val ottGitViewModel : OttGitViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -41,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 Surface(
                     modifier = Modifier
                 ) {
-                    StyledTextField()
+                    kakaoLoginView(ottGitViewModel)
                 }
             }
         }
@@ -49,7 +57,26 @@ class LoginActivity : AppCompatActivity() {
 }
 
 @Composable
-fun StyledTextField(modifier: Modifier = Modifier) {
+fun kakaoLoginView(viewModel: OttGitViewModel){
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(20.dp)
+    ) {
+        Spacer(modifier = Modifier.height(10.dp))
+        Button(onClick = {
+            viewModel.handleKaakoLogin()
+        }) {
+            Text(text = "카카오 로그인하기")
+        }
+        Button(onClick = { /*TODO*/ }) {
+            Text(text = "카카오 로그아웃하기")
+        }
+        Text(text = "카카오톡 로그인 여부", textAlign = TextAlign.Center, fontSize = 20.sp)
+    }
+}
+
+@Composable
+fun StyledTextField(modifier: Modifier = Modifier, viewModel : OttGitViewModel) {
     var value by remember { mutableStateOf("") }
     Column(
         modifier = Modifier
@@ -78,13 +105,16 @@ fun StyledTextField(modifier: Modifier = Modifier) {
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
             )
+
+        kakaoLoginView(viewModel)
     }
+
 }
 
 @Preview(showBackground = true)
 @Composable
 private fun showStyleTextField() {
     OTTGITTheme {
-        StyledTextField()
+//        StyledTextField()
     }
 }

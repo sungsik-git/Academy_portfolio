@@ -19,6 +19,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -58,20 +59,27 @@ class LoginActivity : AppCompatActivity() {
 
 @Composable
 fun kakaoLoginView(viewModel: OttGitViewModel){
+
+    var isLoggedIn = viewModel.isLoggedIn.collectAsState()
+
+    var loginStatusInfoTitle = if(isLoggedIn.value) "로그인 상태" else "로그아웃 상태"
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
         Spacer(modifier = Modifier.height(10.dp))
         Button(onClick = {
-            viewModel.handleKaakoLogin()
+            viewModel.kakaoLogin()
         }) {
             Text(text = "카카오 로그인하기")
         }
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+            viewModel.kakaoLogout()
+        }) {
             Text(text = "카카오 로그아웃하기")
         }
-        Text(text = "카카오톡 로그인 여부", textAlign = TextAlign.Center, fontSize = 20.sp)
+        Text(text = loginStatusInfoTitle, textAlign = TextAlign.Center, fontSize = 20.sp)
     }
 }
 

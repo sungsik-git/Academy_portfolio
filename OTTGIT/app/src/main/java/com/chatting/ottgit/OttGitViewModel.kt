@@ -25,6 +25,7 @@ class OttGitViewModel(application: Application) : AndroidViewModel(application) 
 
     fun kakaoLogin(){
         viewModelScope.launch {
+            Log.e(TAG,"here!!")
             handleKakaoLogin()
             isLoggedIn.emit(handleKakaoLogin())
         }

@@ -27,11 +27,6 @@
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
 
         <!--        카카오 로그인 Activity-->
@@ -49,14 +44,6 @@
                     android:scheme="string/kakao_oauth_host" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".AuthCodeHandlerActivity"
-            android:exported="false" />
-
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="akdfadfladflka" />
 
         <activity
             android:name=".MainActivity"

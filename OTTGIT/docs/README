@@ -5,12 +5,13 @@
 # 플로우 차트
 - Splash Screen - Login(계정 연동) - Main(map <-> list)
                                      ㅏ Status Message
-                                     ㅏ My Page - Edit Information
+                                     ㅏ My Page ㅜ Edit Information
+                                     ㅣ          ㅏ Account Management (Logout, Delete Account...)
                                      ㅏ Other User Profile - (AD) - chatting
 
 # 필요한 기능 (API)
 - [ ] 계정 연동 로그인
 - [ ] 위치 기반
 - [ ] 카메라 접근
-
+- [ ] 챗팅 기록 저장 DB (FireBase)
 

@@ -11,6 +11,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven( "https://jitpack.io" )
+
+        //kakao login
         maven( "https://devrepo.kakao.com/nexus/content/groups/public/")
     }
 }

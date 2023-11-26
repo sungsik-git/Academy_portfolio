@@ -1,4 +1,4 @@
-package com.chatting.ottgit
+package com.chatting.ottgit.viewModel
 
 import android.app.Application
 import android.util.Log
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-class OttGitViewModel(application: Application) : AndroidViewModel(application) {
+class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     companion object{
         const val TAG = "OttGitViewModel"
@@ -25,7 +25,6 @@ class OttGitViewModel(application: Application) : AndroidViewModel(application) 
 
     fun kakaoLogin(){
         viewModelScope.launch {
-            Log.e(TAG,"here!!")
             handleKakaoLogin()
             isLoggedIn.emit(handleKakaoLogin())
         }

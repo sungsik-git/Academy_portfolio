@@ -35,12 +35,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.ViewModel
 import com.chatting.ottgit.ui.theme.OTTGITTheme
+import com.chatting.ottgit.viewModel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
 
-    private val ottGitViewModel : OttGitViewModel by viewModels()
+    private val ottGitViewModel : LoginViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
 }
 
 @Composable
-fun kakaoLoginView(viewModel: OttGitViewModel){
+fun kakaoLoginView(viewModel: LoginViewModel){
 
     var isLoggedIn = viewModel.isLoggedIn.collectAsState()
 
@@ -84,7 +84,7 @@ fun kakaoLoginView(viewModel: OttGitViewModel){
 }
 
 @Composable
-fun StyledTextField(modifier: Modifier = Modifier, viewModel : OttGitViewModel) {
+fun StyledTextField(modifier: Modifier = Modifier, viewModel : LoginViewModel) {
     var value by remember { mutableStateOf("") }
     Column(
         modifier = Modifier

@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-class LoginViewModel(application: Application) : AndroidViewModel(application) {
+class KakaoLoginViewModel(application: Application) : AndroidViewModel(application) {
 
     companion object{
         const val TAG = "OttGitViewModel"

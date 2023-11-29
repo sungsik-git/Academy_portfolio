@@ -38,7 +38,7 @@ class GoogleLogin : Activity() {
     }
     // [END on_start_check_user]
 
-    private fun startSignIn() {
+    fun startSignIn() {
         // Initiate sign in with custom token
         // [START sign_in_custom]
         customToken?.let {

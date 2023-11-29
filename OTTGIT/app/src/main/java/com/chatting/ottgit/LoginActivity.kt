@@ -28,6 +28,8 @@ import com.chatting.ottgit.viewModel.KakaoLoginViewModel
 class LoginActivity : AppCompatActivity() {
 
     private val loginViewModel : KakaoLoginViewModel by viewModels()
+    private val googleLogin: GoogleLogin = GoogleLogin()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -37,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
                 Surface(
                     modifier = Modifier
                 ) {
-                    kakaoLoginView(loginViewModel)
+                    kakaoLoginView(loginViewModel,googleLogin)
                 }
             }
         }
@@ -45,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
 }
 
 @Composable
-fun kakaoLoginView(viewModel: KakaoLoginViewModel){
+fun kakaoLoginView(viewModel: KakaoLoginViewModel, googleLogin: GoogleLogin){
 
     var isLoggedIn = viewModel.isLoggedIn.collectAsState()
 
@@ -69,7 +71,7 @@ fun kakaoLoginView(viewModel: KakaoLoginViewModel){
         Text(text = loginStatusInfoTitle, textAlign = TextAlign.Center, fontSize = 20.sp)
 
         Button(onClick = {
-
+            googleLogin.startSignIn()
             }
         ) {
             Text(text = "구글 로그인")

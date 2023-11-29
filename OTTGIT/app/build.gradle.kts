@@ -4,6 +4,8 @@ import java.util.Properties;
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
+//    id("com.google.gms.google-services") version "4.3.15" apply false
 }
 
 var properties = Properties()
@@ -59,11 +61,14 @@ android {
 }
 
 dependencies {
-    //googleLogin
-    implementation("com.google.gms:google-services:4.3.15")
-    implementation("com.google.firebase:firebase-auth:22.0.0")
-    implementation("com.google.firebase:firebase-bom:32.0.0")
-    implementation("com.google.android.gms:play-services-auth:20.5.0")
+    // 구글 firebase 연동
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    //firebase 실시간 DB
+    implementation("com.google.firebase:firebase-database-ktx")
+
     // 카카오 로그인
     implementation("com.kakao.sdk:v2-user:2.18.0")
     //기본 dependencies
@@ -77,6 +82,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

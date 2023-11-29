@@ -4,10 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 
 
-class GoogleLoginViewModel (application: Application) : AndroidViewModel(application)  {
-
-
-
-
+class GoogleLoginViewModel(application: Application) : AndroidViewModel(application) {
 
 }

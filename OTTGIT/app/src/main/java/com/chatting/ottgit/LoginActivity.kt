@@ -67,6 +67,13 @@ fun kakaoLoginView(viewModel: KakaoLoginViewModel){
             Text(text = "카카오 로그아웃하기")
         }
         Text(text = loginStatusInfoTitle, textAlign = TextAlign.Center, fontSize = 20.sp)
+
+        Button(onClick = {
+
+            }
+        ) {
+            Text(text = "구글 로그인")
+        }
     }
 }
 

@@ -3,12 +3,12 @@
 File 구조
 
 CardFit
-  ㄴ Eclipse Project Folder : 프로젝트 소스코드
-  ㄴ PPT : 발표 PPT
-  ㄴ Screen Shot : 페이지 스크린샷
-  ㄴ Vidio : 페이지 영상 녹화본
-  ㄴ ER Diagram 
-  ㄴ SQL Query 
-  ㄴ Context.xml
-  ㄴ 참고자료
+<br/>  ㄴ Eclipse Project Folder : 프로젝트 소스코드
+<br/>  ㄴ PPT : 발표 PPT
+<br/>  ㄴ Screen Shot : 페이지 스크린샷
+<br/>  ㄴ Vidio : 페이지 영상 녹화본
+<br/>  ㄴ ER Diagram 
+<br/>  ㄴ SQL Query 
+<br/>  ㄴ Context.xml
+<br/>  ㄴ 참고자료
   
